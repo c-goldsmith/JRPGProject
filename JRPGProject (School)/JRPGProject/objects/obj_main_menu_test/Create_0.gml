@@ -15,5 +15,5 @@ creditsText = [
 	"Created by:",
 	"Gin JW Harris",
 	"SignHereCamryn",
-	"SignHereTami"
+	"Tami Stanley"
 ];
