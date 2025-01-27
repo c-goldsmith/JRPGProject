@@ -1,22 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_main_menu_test",
+  "%Name":"obj_map_mover",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_main_menu_test",
+  "name":"obj_map_mover",
   "overriddenProperties":[],
   "parent":{
-    "name":"Children",
-    "path":"folders/Objects/Children.yy",
+    "name":"Big Map Obj",
+    "path":"folders/Objects/Children/Big Map Obj.yy",
   },
-  "parentObjectId":{
-    "name":"par_menu",
-    "path":"objects/par_menu/par_menu.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -35,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_menu_back",
-    "path":"sprites/spr_menu_back/spr_menu_back.yy",
+    "name":"spr_bigmap_mover_south_idle",
+    "path":"sprites/spr_bigmap_mover_south_idle/spr_bigmap_mover_south_idle.yy",
   },
   "spriteMaskId":null,
   "visible":true,
