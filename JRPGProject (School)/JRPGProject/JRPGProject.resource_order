@@ -19,5 +19,7 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
-  "ResourceOrderSettings":[],
+  "ResourceOrderSettings":[
+    {"name":"rm_battle_test","order":1,"path":"rooms/rm_battle_test/rm_battle_test.yy",},
+  ],
 }

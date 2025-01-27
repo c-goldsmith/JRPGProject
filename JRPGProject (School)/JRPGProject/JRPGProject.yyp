@@ -33,12 +33,13 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.0.137",
+    "IDEVersion":"2024.11.0.179",
   },
   "name":"JRPGProject",
   "resources":[
     {"id":{"name":"obj_main_menu_test","path":"objects/obj_main_menu_test/obj_main_menu_test.yy",},},
     {"id":{"name":"par_menu","path":"objects/par_menu/par_menu.yy",},},
+    {"id":{"name":"rm_battle_test","path":"rooms/rm_battle_test/rm_battle_test.yy",},},
     {"id":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
     {"id":{"name":"back_start_test","path":"sprites/back_start_test/back_start_test.yy",},},
     {"id":{"name":"spr_menu_back","path":"sprites/spr_menu_back/spr_menu_back.yy",},},
@@ -47,6 +48,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
+    {"roomId":{"name":"rm_battle_test","path":"rooms/rm_battle_test/rm_battle_test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
