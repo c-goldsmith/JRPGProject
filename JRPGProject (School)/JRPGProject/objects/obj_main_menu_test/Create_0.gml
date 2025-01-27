@@ -14,6 +14,6 @@ menuText = [
 creditsText = [
 	"Created by:",
 	"Gin JW Harris",
-	"Camryn Goldsmith"
+	"Camryn Goldsmith",
 	"Tami Stanley"
 ];
