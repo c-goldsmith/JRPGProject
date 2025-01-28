@@ -19,10 +19,16 @@
     {"name":"Sprites","order":1,"path":"folders/Sprites.yy",},
     {"name":"Backgrounds","order":2,"path":"folders/Sprites/Backgrounds.yy",},
     {"name":"Big Map Spr","order":3,"path":"folders/Sprites/Big Map Spr.yy",},
+    {"name":"Tile Sets","order":4,"path":"folders/Sprites/Tile Sets.yy",},
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
+    {"name":"Big Map","order":1,"path":"folders/Tile Sets/Big Map.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
     {"name":"obj_manager","order":3,"path":"objects/obj_manager/obj_manager.yy",},
+    {"name":"spr_ts_bigmap_cover","order":1,"path":"sprites/spr_ts_bigmap_cover/spr_ts_bigmap_cover.yy",},
+    {"name":"spr_ts_block","order":2,"path":"sprites/spr_ts_block/spr_ts_block.yy",},
+    {"name":"ts_bigmap_block","order":2,"path":"tilesets/ts_bigmap_block/ts_bigmap_block.yy",},
+    {"name":"ts_bigmap_cover","order":1,"path":"tilesets/ts_bigmap_cover/ts_bigmap_cover.yy",},
   ],
 }
