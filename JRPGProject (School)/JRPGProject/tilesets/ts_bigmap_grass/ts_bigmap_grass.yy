@@ -1,0 +1,42 @@
+{
+  "$GMTileSet":"v1",
+  "%Name":"ts_bigmap_grass",
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"Grass","closed_edge":false,"name":"Grass","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[10,13,12,2,5,9,25,1,4,26,11,3,18,17,19,0,],},
+    {"$GMAutoTileSet":"","%Name":"Desert","closed_edge":false,"name":"Desert","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[42,45,44,34,37,41,57,33,36,58,43,35,50,49,51,0,],},
+    {"$GMAutoTileSet":"","%Name":"Snow","closed_edge":false,"name":"Snow","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[74,77,76,66,69,73,89,65,68,90,75,67,82,81,83,0,],},
+  ],
+  "macroPageTiles":{
+    "SerialiseHeight":0,
+    "SerialiseWidth":0,
+    "TileSerialiseData":[],
+  },
+  "name":"ts_bigmap_grass",
+  "out_columns":10,
+  "out_tilehborder":2,
+  "out_tilevborder":2,
+  "parent":{
+    "name":"Big Map",
+    "path":"folders/Tile Sets/Big Map.yy",
+  },
+  "resourceType":"GMTileSet",
+  "resourceVersion":"2.0",
+  "spriteId":{
+    "name":"spr_ts_bigmap_grass",
+    "path":"sprites/spr_ts_bigmap_grass/spr_ts_bigmap_grass.yy",
+  },
+  "spriteNoExport":false,
+  "textureGroupId":{
+    "name":"Default",
+    "path":"texturegroups/Default",
+  },
+  "tileAnimationFrames":[],
+  "tileAnimationSpeed":15.0,
+  "tileHeight":32,
+  "tilehsep":2,
+  "tilevsep":2,
+  "tileWidth":32,
+  "tilexoff":1,
+  "tileyoff":1,
+  "tile_count":96,
+}
