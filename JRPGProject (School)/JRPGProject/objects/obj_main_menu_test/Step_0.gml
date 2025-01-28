@@ -4,7 +4,8 @@
 if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 	switch (mainMenuSelect) { // Switch for determining which button is pressed! Fill these in as we make them
 		case 0: // Map
-		
+			room_goto(rm_map_1); // Go to the first big map room
+			
 		break;
 		
 		case 1: // Area
