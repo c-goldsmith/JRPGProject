@@ -7,7 +7,7 @@ draw_set_color(c_black); // Sets default text drawing color
 battleText = [
 	"Attack",
 	"Magic",
-	"Item",
+	"Defend",
 	"Exit"
 ];
 

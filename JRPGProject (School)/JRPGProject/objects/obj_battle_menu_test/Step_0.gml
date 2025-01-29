@@ -11,7 +11,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 		
 		break;
 		
-		case 2: // Item
+		case 2: // Defend
 			
 		break;
 		
