@@ -17,10 +17,12 @@
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Children","folderPath":"folders/Objects/Children.yy","name":"Children","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Big Map Obj","folderPath":"folders/Objects/Children/Big Map Obj.yy","name":"Big Map Obj","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"area objects","folderPath":"folders/Objects/Children/area objects.yy","name":"area objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Parents","folderPath":"folders/Objects/Parents.yy","name":"Parents","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"areas","folderPath":"folders/Rooms/areas.yy","name":"areas","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Big Maps","folderPath":"folders/Rooms/Big Maps.yy","name":"Big Maps","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Sequences","folderPath":"folders/Sequences.yy","name":"Sequences","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -46,6 +48,7 @@
     {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},},
     {"id":{"name":"obj_map_mover","path":"objects/obj_map_mover/obj_map_mover.yy",},},
     {"id":{"name":"par_menu","path":"objects/par_menu/par_menu.yy",},},
+    {"id":{"name":"rm_area_test","path":"rooms/rm_area_test/rm_area_test.yy",},},
     {"id":{"name":"rm_map_1","path":"rooms/rm_map_1/rm_map_1.yy",},},
     {"id":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
     {"id":{"name":"back_start_test","path":"sprites/back_start_test/back_start_test.yy",},},
@@ -63,6 +66,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
     {"roomId":{"name":"rm_map_1","path":"rooms/rm_map_1/rm_map_1.yy",},},
+    {"roomId":{"name":"rm_area_test","path":"rooms/rm_area_test/rm_area_test.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

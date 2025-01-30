@@ -9,6 +9,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 		break;
 		
 		case 1: // Area
+			room_goto(rm_area_test);
 		
 		break;
 		
