@@ -42,10 +42,12 @@
   },
   "name":"JRPGProject",
   "resources":[
+    {"id":{"name":"obj_battle_menu_test","path":"objects/obj_battle_menu_test/obj_battle_menu_test.yy",},},
     {"id":{"name":"obj_main_menu_test","path":"objects/obj_main_menu_test/obj_main_menu_test.yy",},},
     {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},},
     {"id":{"name":"obj_map_mover","path":"objects/obj_map_mover/obj_map_mover.yy",},},
     {"id":{"name":"par_menu","path":"objects/par_menu/par_menu.yy",},},
+    {"id":{"name":"rm_battle_test","path":"rooms/rm_battle_test/rm_battle_test.yy",},},
     {"id":{"name":"rm_map_1","path":"rooms/rm_map_1/rm_map_1.yy",},},
     {"id":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
     {"id":{"name":"back_start_test","path":"sprites/back_start_test/back_start_test.yy",},},
@@ -62,6 +64,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
+    {"roomId":{"name":"rm_battle_test","path":"rooms/rm_battle_test/rm_battle_test.yy",},},
     {"roomId":{"name":"rm_map_1","path":"rooms/rm_map_1/rm_map_1.yy",},},
   ],
   "templateType":"game",

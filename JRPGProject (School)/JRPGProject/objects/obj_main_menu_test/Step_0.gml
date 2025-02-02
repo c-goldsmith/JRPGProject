@@ -13,7 +13,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 		break;
 		
 		case 2: // Battle
-		
+			room_goto(rm_battle_test); // Go to the battle test room
 		break;
 		
 		case 3: // Quit
