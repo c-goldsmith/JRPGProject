@@ -8,6 +8,11 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 		break;
 		
 		case 1: // Magic
+			if(onSpellMenu == 0)
+			{
+				onSpellMenu = 1;
+				textToDisplay = spellText;
+			}
 		
 		break;
 		
@@ -16,7 +21,13 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 		break;
 		
 		case 3: // Exit to main menu - this will be replaced with run 
-			room_goto(rm_start_test) // Exit game
+			if(onSpellMenu == 0)
+			{
+				room_goto(rm_start_test) // Exit battle
+			} else {
+				onSpellMenu = 0;
+				textToDisplay = battleText;
+			}
 		break;
 	}
 }

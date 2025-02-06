@@ -10,7 +10,7 @@ for (var i=0; i<4; i++) { // Sets color based on current text position, then dra
 	}
 	
 	// Draw text
-	draw_text(x+6, y+6+(i*22), battleText[i]);
+	draw_text(x+6, y+6+(i*22), textToDisplay[i]);
 }
 
 // Reset color back to black

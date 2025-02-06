@@ -29,6 +29,7 @@
     {"$GMFolder":"","%Name":"Sprites","folderPath":"folders/Sprites.yy","name":"Sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Backgrounds","folderPath":"folders/Sprites/Backgrounds.yy","name":"Backgrounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Big Map Spr","folderPath":"folders/Sprites/Big Map Spr.yy","name":"Big Map Spr","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Battle Enemie Spr","folderPath":"folders/Sprites/Battle Enemie Spr.yy","name":"Battle Enemie Spr","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Sprites/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Big Map","folderPath":"folders/Tile Sets/Big Map.yy","name":"Big Map","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -42,6 +43,7 @@
   },
   "name":"JRPGProject",
   "resources":[
+    {"id":{"name":"obj_battle_enemy","path":"objects/obj_battle_enemy/obj_battle_enemy.yy",},},
     {"id":{"name":"obj_battle_menu_test","path":"objects/obj_battle_menu_test/obj_battle_menu_test.yy",},},
     {"id":{"name":"obj_main_menu_test","path":"objects/obj_main_menu_test/obj_main_menu_test.yy",},},
     {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},},
@@ -51,6 +53,7 @@
     {"id":{"name":"rm_map_1","path":"rooms/rm_map_1/rm_map_1.yy",},},
     {"id":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
     {"id":{"name":"back_start_test","path":"sprites/back_start_test/back_start_test.yy",},},
+    {"id":{"name":"spr_battleRat_test","path":"sprites/spr_battleRat_test/spr_battleRat_test.yy",},},
     {"id":{"name":"spr_bigmap_mover_south_idle","path":"sprites/spr_bigmap_mover_south_idle/spr_bigmap_mover_south_idle.yy",},},
     {"id":{"name":"spr_menu_back","path":"sprites/spr_menu_back/spr_menu_back.yy",},},
     {"id":{"name":"spr_ts_bigmap_cover","path":"sprites/spr_ts_bigmap_cover/spr_ts_bigmap_cover.yy",},},
