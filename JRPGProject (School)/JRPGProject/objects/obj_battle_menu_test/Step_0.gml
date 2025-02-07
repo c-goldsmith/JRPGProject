@@ -3,7 +3,7 @@
 // Function for moving on to next scene when something is selected
 if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 	switch (battleMenuSelect) { // Switch for determining which button is pressed! Fill these in as we make them
-		case 0: // Attack
+		case 0: // Attack or Scan
 			if(onSpellMenu == 0)
 			{
 				global.moveID = 1;
@@ -15,9 +15,10 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 			
 		break;
 		
-		case 1: // Magic
+		case 1: // Magic or Heal
 			if(onSpellMenu == 0)
 			{
+				battleMenuSelect = 0;
 				onSpellMenu = 1;
 				textToDisplay = spellText;
 			} else {
@@ -28,7 +29,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 		
 		break;
 		
-		case 2: // Defend
+		case 2: // Defend or Fireball
 			if(onSpellMenu == 0)
 			{
 				global.moveID = 2;
@@ -42,6 +43,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 			{
 				room_goto(rm_start_test) // Exit battle
 			} else {
+				battleMenuSelect = 0;
 				onSpellMenu = 0;
 				textToDisplay = battleText;
 			}
