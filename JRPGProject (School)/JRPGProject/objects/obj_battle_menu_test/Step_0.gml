@@ -4,6 +4,14 @@
 if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 	switch (battleMenuSelect) { // Switch for determining which button is pressed! Fill these in as we make them
 		case 0: // Attack
+			if(onSpellMenu == 0)
+			{
+				global.moveID = 1;
+			} else {
+				global.moveID = 3;
+				onSpellMenu = 0;
+				textToDisplay = battleText;
+			}
 			
 		break;
 		
@@ -12,6 +20,10 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 			{
 				onSpellMenu = 1;
 				textToDisplay = spellText;
+			} else {
+				global.moveID = 4;
+				onSpellMenu = 0;
+				textToDisplay = battleText;
 			}
 		
 		break;
