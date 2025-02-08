@@ -23,8 +23,8 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
 }
 
 // Change menu position on key press
-if (keyboard_check_pressed(vk_up))		{ mainMenuSelect--; }
-if (keyboard_check_pressed(vk_down))	{ mainMenuSelect++; }
+if ((keyboard_check_pressed(vk_up)) || (keyboard_check_pressed(ord("W"))))		{ mainMenuSelect--; }
+if ((keyboard_check_pressed(vk_down)) || (keyboard_check_pressed(ord("S"))))	{ mainMenuSelect++; }
 
 // Loop menu position around to the top or bottom
 if (mainMenuSelect > 3) { mainMenuSelect = 0; }
