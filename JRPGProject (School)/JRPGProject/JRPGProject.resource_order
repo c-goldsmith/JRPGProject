@@ -38,6 +38,7 @@
     {"name":"spr_bigmap_mover_south_walk","order":6,"path":"sprites/spr_bigmap_mover_south_walk/spr_bigmap_mover_south_walk.yy",},
     {"name":"spr_bigmap_mover_west_idle","order":3,"path":"sprites/spr_bigmap_mover_west_idle/spr_bigmap_mover_west_idle.yy",},
     {"name":"spr_bigmap_mover_west_walk","order":7,"path":"sprites/spr_bigmap_mover_west_walk/spr_bigmap_mover_west_walk.yy",},
+    {"name":"obj_pause_menu","order":1,"path":"objects/obj_pause_menu/obj_pause_menu.yy",},
     {"name":"spr_ts_bigmap_cover","order":1,"path":"sprites/spr_ts_bigmap_cover/spr_ts_bigmap_cover.yy",},
     {"name":"spr_ts_block","order":2,"path":"sprites/spr_ts_block/spr_ts_block.yy",},
     {"name":"ts_bigmap_block","order":2,"path":"tilesets/ts_bigmap_block/ts_bigmap_block.yy",},

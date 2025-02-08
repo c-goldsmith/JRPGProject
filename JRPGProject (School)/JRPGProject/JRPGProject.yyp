@@ -51,6 +51,7 @@
     {"id":{"name":"obj_main_menu_test","path":"objects/obj_main_menu_test/obj_main_menu_test.yy",},},
     {"id":{"name":"obj_manager","path":"objects/obj_manager/obj_manager.yy",},},
     {"id":{"name":"obj_map_mover","path":"objects/obj_map_mover/obj_map_mover.yy",},},
+    {"id":{"name":"obj_pause_menu","path":"objects/obj_pause_menu/obj_pause_menu.yy",},},
     {"id":{"name":"par_menu","path":"objects/par_menu/par_menu.yy",},},
     {"id":{"name":"rm_battle_test","path":"rooms/rm_battle_test/rm_battle_test.yy",},},
     {"id":{"name":"rm_map_1","path":"rooms/rm_map_1/rm_map_1.yy",},},
