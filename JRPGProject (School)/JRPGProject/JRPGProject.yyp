@@ -45,6 +45,7 @@
   "name":"JRPGProject",
   "resources":[
     {"id":{"name":"ft_basic","path":"fonts/ft_basic/ft_basic.yy",},},
+    {"id":{"name":"obj_battle_dialogue","path":"objects/obj_battle_dialogue/obj_battle_dialogue.yy",},},
     {"id":{"name":"obj_battle_enemy","path":"objects/obj_battle_enemy/obj_battle_enemy.yy",},},
     {"id":{"name":"obj_battle_manager","path":"objects/obj_battle_manager/obj_battle_manager.yy",},},
     {"id":{"name":"obj_battle_menu_test","path":"objects/obj_battle_menu_test/obj_battle_menu_test.yy",},},

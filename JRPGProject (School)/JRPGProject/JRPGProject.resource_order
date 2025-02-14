@@ -27,6 +27,7 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"obj_battle_dialogue","order":3,"path":"objects/obj_battle_dialogue/obj_battle_dialogue.yy",},
     {"name":"obj_battle_enemy","order":4,"path":"objects/obj_battle_enemy/obj_battle_enemy.yy",},
     {"name":"obj_battle_manager","order":5,"path":"objects/obj_battle_manager/obj_battle_manager.yy",},
     {"name":"obj_battle_menu_test","order":2,"path":"objects/obj_battle_menu_test/obj_battle_menu_test.yy",},

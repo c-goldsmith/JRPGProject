@@ -2,64 +2,94 @@
 // You can write your code in this editor
 
 //checks if it's player or enemy turn
-if((currentTurn % 2) != 0)
+if(global.halted == 0)
 {
-	//if move not selected yet - display this text
+	//checks who the battler is
+	if(currentBattler == 1)
+	{
+		battlerName = party1;
+		defenderName = enemy1;
+	} else {
+		battlerName = enemy1;
+		defenderName = party1;
+	}
+
+	//if one of the enemies attacking - makes choice for them
+	if(currentBattler > 3)
+	{
+		global.moveID = 1;
+	}
+
+	//if haven't already done move...
 	if(didMove == 0)
 	{
-		currentMessage = "Please select an option.";
-	} 
-	
-	//if move has been selected, continue
-	if((global.moveID != 0) && (didMove == 0))
-	{
-		if(global.moveID == 1)
+		//this will be removed
+		if(currentBattler == 1)
 		{
-			//if basic attack done, do 10 damage to enemy
-			currentMessage = "You attacked!";
-			enemyHP = enemyHP - 10;
-			//if enemy defeated, add extra text
-			if(enemyHP <= 0)
+			global.currentMessage = "Please select option.";
+		}
+	
+		if(global.moveID != 0)
+		{
+			//checks what move was done (will change to switch)
+			if(global.moveID == 1)
 			{
-				currentMessage = currentMessage + " Enemy fainted!";
+				if(currentBattler == 1) 
+				{ 
+					enemyHP = enemyHP - 10; 
+				} else {
+					playerHP = playerHP - 5;
+				}
+				global.currentMessage = battlerName + " attacked " 
+					+ defenderName + "!";
+				if(playerHP <= 0 || enemyHP <= 0) 
+				{
+					global.currentMessage = currentMessage + " " + defenderName 
+						+ " fainted!";
+				}
 			}
-		} else if(global.moveID == 2)
-		{
-			//message for if defending (no functionality yet)
-			currentMessage = "You defended!";
-		} else if(global.moveID == 3)
-		{
-			//message for if scanning enemy
-			currentMessage = "You scanned the rat: It's a placeholder!";
-		} else if(global.moveID == 4)
-		{
-			//heals 10 hp from player
-			currentMessage = "You healed!";
-			playerHP = playerHP + 10;
-			if(playerHP > 100) playerHP = 100;
+			else if(global.moveID == 2)
+			{
+				global.currentMessage = battlerName + " defended!";
+			} else if(global.moveID == 3)
+			{
+				//message for if scanning enemy
+				global.currentMessage = "You scanned the rat: It's a placeholder!";
+			} else if(global.moveID == 4)
+			{
+				//heals 10 hp from player
+				global.currentMessage = battlerName + " healed!";
+				playerHP = playerHP + 10;
+				if(playerHP > 100) playerHP = 100;
+			}
+			
+			//end of turn stuff
+			//marks move was done
+			didMove = 1;
+			//tells dialogue what to show stuff
+			global.messagesLeft = 1;
+			global.messageToShow = 1;
+			//goes to next battler
+			currentBattler = currentBattler + 1;
+			while(battlersActive[currentBattler - 1] == 0)
+			{
+				currentBattler++;
+				if(currentBattler >= 7) currentBattler = 1;
+			}
+			//resets stuff
+			didMove = 0;
+			global.moveID = 0;
+			//halts game to wait for dialogue progression
+			global.halted = 1;
+
+			//if either defeated, go back to start screen
+			if((enemyHP <= 0) || (playerHP <= 0))
+			{
+				room_goto(rm_start_test);
+			}
 		}
-		//resets moveID for next turn
-		global.moveID = 0;
-		//records move has been done and selected
-		didMove = 1;
-		//alarm so text stays on screen for a short period before
-		//moving to next turn - will be changed to progress with space in future
-		alarm[0] = game_get_speed(gamespeed_fps);
 	}
-	
 } else {
-	if(didMove == 0)
-	{
-		//if enemy turn, just attack player
-		currentMessage = "The rat attacked!";
-		playerHP = playerHP - 5;
-		didMove = 1;
-		//add to message if player defeated
-		if(playerHP <= 0)
-		{
-			currentMessage = currentMessage + " Player fainted!";
-		}
-		//alarm (same as above)
-		alarm[0] = game_get_speed(gamespeed_fps);
-	}
+	//resets this again - unsure why but this is needed
+	global.moveID = 0;
 }
