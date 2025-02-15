@@ -1,37 +1,37 @@
 /// @description Checks every update
 
-currentx = camera_get_view_x(view_camera[0]);
-currenty = camera_get_view_y(view_camera[0]);
+var currentx = camera_get_view_x(view_camera[0]); // current x position
+var currenty = camera_get_view_y(view_camera[0]); // current y position
 
 x = currentx + xDiff;
 y = currenty + yDiff;
 
+// Get inputs
+var up_key_pressed = keyboard_check_pressed(vk_up);
+var down_key_pressed = keyboard_check_pressed(vk_down);
+var space_key_pressed = keyboard_check_pressed(vk_space);
+var z_key_pressed = keyboard_check_pressed(ord("Z"));
+
+// Get menu length of current submenu
+pauseMenuLength = array_length(pauseMenuText[pauseMenuLevel]);
+
+// Move up or down the submenu
+pauseMenuPos += up_key_pressed - down_key_pressed;
+if pauseMenuPos >= pauseMenuLength {pauseMenuPos = 0};
+if pauseMenuPos < 0 {pauseMenuPos = pauseMenuLength - 1};
+
 // Function for selecting a highlighted option
-if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z"))) {
-	switch (pauseMenuSelect) { // Switch for determining which button is pressed! Fill these in as we make them
-	
-		case 0: // Party - displays your party
-		
-		break;
-		
-		case 1: // Inventory - check your items
-			
-		break;
-		
-		case 2: // Bestiary - look at scanned entries
-		
-		break;
-		
-		case 3: // Quit - self explanatory
-			room_goto(rm_start_test); // go back to main menu
-		break;
+if (space_key_pressed || z_key_pressed) {
+	switch (pauseMenuLevel) {
+		// first pause menu, need to continue to refactor
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			room_goto(rm_start_test);
+			break;
 	}
 }
-
-// Change menu position on key press
-if (keyboard_check_pressed(vk_up))		{ pauseMenuSelect--; }
-if (keyboard_check_pressed(vk_down))	{ pauseMenuSelect++; }
-
-// Loop menu position around to the top or bottom
-if (pauseMenuSelect > 3) { pauseMenuSelect = 0; }
-if (pauseMenuSelect < 0) { pauseMenuSelect = 3; }

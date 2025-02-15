@@ -3,19 +3,42 @@
 // Set up variables
 xDiff = x - camera_get_view_x(view_camera[0]);
 yDiff = y - camera_get_view_y(view_camera[0]);
-currentx = 0; // current x position
-currenty = 0; // current y position
-visible = false; // This menu needs to stay hidden unitl
-				 // the escape key is pressed
+
+visible = false; // This menu needs to stay hidden until the escape key is pressed
 checkGamePause = 0; // initial pause menu position of highlighted text
-pauseMenuSelect = 0; // For determining which option gets highlighted
-					 // when the game is paused
+
 					
 draw_set_color(c_black); // Sets default text drawing color
 
-pauseMenuText = [
-	"Party",
-	"Inventory",
-	"Bestiary",
-	"Quit"
-];
+// Menu level 0
+pauseMenuText[0, 0] = "Party";
+pauseMenuText[0, 1] = "Inventory";
+pauseMenuText[0, 2] = "Bestiary";
+pauseMenuText[0, 3] = "Quit";
+
+// Menu level 1 - Party
+// (has placeholder text for now)
+pauseMenuText[1, 0] = "PartyMember1";
+pauseMenuText[1, 1] = "PartyMember2";
+pauseMenuText[1, 2] = "PartyMember3";
+pauseMenuText[1, 3] = "PartyMember4";
+pauseMenuText[1, 4] = "Back";
+
+// Menu level 2 - Inventory
+// (has placeholder text for now)
+pauseMenuText[2, 0] = "Item1";
+pauseMenuText[2, 1] = "Item2";
+pauseMenuText[2, 2] = "Item3";
+pauseMenuText[2, 3] = "Back";
+
+// Menu level 3 - Bestiary table of contents
+// (has placeholder text for now)
+pauseMenuText[3, 0] = "Enemy1";
+pauseMenuText[3, 1] = "Enemy2";
+pauseMenuText[3, 2] = "Enemy3";
+pauseMenuText[3, 3] = "Enemy4";
+pauseMenuText[3, 4] = "Back";
+
+pauseMenuLevel = 0;
+pauseMenuPos = 0;
+pauseMenuLength = 0;

@@ -1,4 +1,4 @@
-/// @description Checks every update
+ /// @description Checks every update
 
 // Function for moving on to next scene when something is selected
 
