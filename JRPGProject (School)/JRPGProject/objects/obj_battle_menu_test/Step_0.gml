@@ -63,8 +63,8 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 }
 
 // Change menu position on key press
-if (keyboard_check_pressed(vk_up))		{ battleMenuSelect--; }
-if (keyboard_check_pressed(vk_down))	{ battleMenuSelect++; }
+if (keyboard_check_pressed(vk_up)||(keyboard_check_pressed(ord("W"))))	{ battleMenuSelect--; }
+if (keyboard_check_pressed(vk_down)||(keyboard_check_pressed(ord("S"))))	{ battleMenuSelect++; }
 
 // Loop menu position around to the top or bottom
 if (battleMenuSelect > 3) { battleMenuSelect = 0; }

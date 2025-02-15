@@ -1,5 +1,8 @@
 /// @description Basic movement
 
+var oldX = x;
+var oldY = y;
+
  // Reset moving variables
 moveY = 0;
 moveX = 0;
@@ -38,3 +41,14 @@ if !(keyboard_check(vk_up) || (keyboard_check(ord("W")))
 
  // Actual movement logic
 move_and_collide(moveX, moveY, layer_tilemap_get_id("Bounding"), 4, 0, 0, 1, 1);
+
+if (x != oldX) || (y != oldY) {
+	charSteps += travelSpd;
+	
+	if (charSteps >= 50) {
+		charSteps = 0;
+		global.worldDate = advance_date(global.worldDate.day, global.worldDate.month, global.worldDate.year);
+	}
+	
+	
+}
