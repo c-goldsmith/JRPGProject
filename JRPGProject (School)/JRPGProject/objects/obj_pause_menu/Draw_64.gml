@@ -1,9 +1,9 @@
 /// @description Draw to screen above others
 
 // Draw the text
-for (var i=0; i<4; i++) { // Sets color based on current text position, then draws that row of text.
+for (var i=0; i<pauseMenuLength; i++) { // Sets color based on current text position, then draws that row of text.
 	
-	if (pauseMenuSelect = i) { // Set color
+	if (pauseMenuPos = i) { // Set color
 		draw_set_color(c_lime);	
 	} else {
 		draw_set_color(c_green);
