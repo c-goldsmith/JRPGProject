@@ -11,4 +11,4 @@ typerDelay		= 0; // Used to slow the typer tf down. chill bro
 
 emoteWidth = 0; // Width of the speaker portrait. 0 if none
 
-global.inDialogue = true;
+global.isDialogue = true;
