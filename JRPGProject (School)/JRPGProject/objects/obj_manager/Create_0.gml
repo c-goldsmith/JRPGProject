@@ -20,4 +20,4 @@ global.worldDate = { // Global date, used to measure time. This is the default t
 };
 
 global.isPaused		= false;
-global.inDialogue	= false;
+global.isDialogue	= false;
