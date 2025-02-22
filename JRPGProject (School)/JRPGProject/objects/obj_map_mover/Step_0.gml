@@ -8,7 +8,7 @@ moveY = 0;
 moveX = 0;
 
  // Keyboard movement check
-if ((global.isPaused == false) && (global.inDialogue == false)) {
+if ((global.isPaused == false) && (global.isDialogue == false)) {
 	if (keyboard_check(vk_up) || keyboard_check(ord("W"))) {
 		moveY -= moveSpd; 
 		sprIdle = spr_bigmap_mover_north_idle;
