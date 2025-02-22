@@ -18,3 +18,6 @@ global.worldDate = { // Global date, used to measure time. This is the default t
 	year	: 1444,
 	weekday : 6
 };
+
+global.isPaused		= false;
+global.inDialogue	= false;
