@@ -4,18 +4,24 @@
 //checks if it's player or enemy turn
 if(global.halted == 0)
 {
-	//checks who the battler is
-	if(currentBattler == 1)
+	if(battleEnd)
 	{
-		battlerName = party1;
-		defenderName = enemy1;
-	} else {
-		battlerName = enemy1;
-		defenderName = party1;
+		room_goto(rm_start_test);
 	}
-
+	//checks who the battler is
+	
+	if(currentBattler == 0)
+	{
+		battleTarget = 3;
+	} else {
+		battleTarget = 0;
+	}
+	
+	battlerName = global.battlersNames[currentBattler];
+	defenderName = global.battlersNames[battleTarget];
+	
 	//if one of the enemies attacking - makes choice for them
-	if(currentBattler > 3)
+	if(currentBattler >= 2)
 	{
 		global.moveID = 1;
 	}
@@ -24,7 +30,7 @@ if(global.halted == 0)
 	if(didMove == 0)
 	{
 		//this will be removed
-		if(currentBattler == 1)
+		if(currentBattler == 0)
 		{
 			global.currentMessage = "Please select option.";
 		}
@@ -34,18 +40,17 @@ if(global.halted == 0)
 			//checks what move was done (will change to switch)
 			if(global.moveID == 1)
 			{
-				if(currentBattler == 1) 
-				{ 
-					enemyHP = enemyHP - 10; 
-				} else {
-					playerHP = playerHP - 5;
-				}
+				global.battlersCurrentHP[battleTarget] = global.battlersCurrentHP[battleTarget] - 15;
+				if(global.battlersCurrentHP[battleTarget] <= 0) global.battlersCurrentHP[battleTarget] = 0;
+			
 				global.currentMessage = battlerName + " attacked " 
 					+ defenderName + "!";
-				if(playerHP <= 0 || enemyHP <= 0) 
+				if((global.battlersCurrentHP[0] + global.battlersCurrentHP[1] + global.battlersCurrentHP[2] <= 0) 
+					|| (global.battlersCurrentHP[3]  + global.battlersCurrentHP[4] + global.battlersCurrentHP[5] <= 0)) 
 				{
-					global.currentMessage = currentMessage + " " + defenderName 
+					global.currentMessage = global.currentMessage + " " + defenderName 
 						+ " fainted!";
+						battleEnd = true;
 				}
 			}
 			else if(global.moveID == 2)
@@ -59,8 +64,11 @@ if(global.halted == 0)
 			{
 				//heals 10 hp from player
 				global.currentMessage = battlerName + " healed!";
-				playerHP = playerHP + 10;
-				if(playerHP > 100) playerHP = 100;
+				global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + 25;
+				if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
+				{
+					global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+				}
 			}
 			
 			//end of turn stuff
@@ -70,11 +78,11 @@ if(global.halted == 0)
 			global.messagesLeft = 1;
 			global.messageToShow = 1;
 			//goes to next battler
-			currentBattler = currentBattler + 1;
-			while(battlersActive[currentBattler - 1] == 0)
+			currentBattler++;
+			while(global.battlersActive[currentBattler] == 0)
 			{
 				currentBattler++;
-				if(currentBattler >= 7) currentBattler = 1;
+				if(currentBattler >= 6) currentBattler = 0;
 			}
 			//resets stuff
 			didMove = 0;
@@ -83,10 +91,6 @@ if(global.halted == 0)
 			global.halted = 1;
 
 			//if either defeated, go back to start screen
-			if((enemyHP <= 0) || (playerHP <= 0))
-			{
-				room_goto(rm_start_test);
-			}
 		}
 	}
 } else {

@@ -1,15 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_battle_enemy",
-  "eventList":[],
+  "%Name":"obj_enemy_plate_1",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_battle_enemy",
+  "name":"obj_enemy_plate_1",
   "overriddenProperties":[],
   "parent":{
     "name":"Battle Obj",
     "path":"folders/Objects/Children/Battle Obj.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"par_menu",
+    "path":"objects/par_menu/par_menu.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_battleRat_test",
-    "path":"sprites/spr_battleRat_test/spr_battleRat_test.yy",
+    "name":"spr_menu_back",
+    "path":"sprites/spr_menu_back/spr_menu_back.yy",
   },
   "spriteMaskId":null,
   "visible":true,
