@@ -2,64 +2,98 @@
 // You can write your code in this editor
 
 //checks if it's player or enemy turn
-if((currentTurn % 2) != 0)
+if(global.halted == 0)
 {
-	//if move not selected yet - display this text
+	if(battleEnd)
+	{
+		room_goto(rm_start_test);
+	}
+	//checks who the battler is
+	
+	if(currentBattler == 0)
+	{
+		battleTarget = 3;
+	} else {
+		battleTarget = 0;
+	}
+	
+	battlerName = global.battlersNames[currentBattler];
+	defenderName = global.battlersNames[battleTarget];
+	
+	//if one of the enemies attacking - makes choice for them
+	if(currentBattler >= 2)
+	{
+		global.moveID = 1;
+	}
+
+	//if haven't already done move...
 	if(didMove == 0)
 	{
-		currentMessage = "Please select an option.";
-	} 
-	
-	//if move has been selected, continue
-	if((global.moveID != 0) && (didMove == 0))
-	{
-		if(global.moveID == 1)
+		//this will be removed
+		if(currentBattler == 0)
 		{
-			//if basic attack done, do 10 damage to enemy
-			currentMessage = "You attacked!";
-			enemyHP = enemyHP - 10;
-			//if enemy defeated, add extra text
-			if(enemyHP <= 0)
+			global.currentMessage = "Please select option.";
+		}
+	
+		if(global.moveID != 0)
+		{
+			//checks what move was done (will change to switch)
+			if(global.moveID == 1)
 			{
-				currentMessage = currentMessage + " Enemy fainted!";
+				global.battlersCurrentHP[battleTarget] = global.battlersCurrentHP[battleTarget] - 15;
+				if(global.battlersCurrentHP[battleTarget] <= 0) global.battlersCurrentHP[battleTarget] = 0;
+			
+				global.currentMessage = battlerName + " attacked " 
+					+ defenderName + "!";
+				if((global.battlersCurrentHP[0] + global.battlersCurrentHP[1] + global.battlersCurrentHP[2] <= 0) 
+					|| (global.battlersCurrentHP[3]  + global.battlersCurrentHP[4] + global.battlersCurrentHP[5] <= 0)) 
+				{
+					global.currentMessage = global.currentMessage + " " + defenderName 
+						+ " fainted!";
+						battleEnd = true;
+				}
 			}
-		} else if(global.moveID == 2)
-		{
-			//message for if defending (no functionality yet)
-			currentMessage = "You defended!";
-		} else if(global.moveID == 3)
-		{
-			//message for if scanning enemy
-			currentMessage = "You scanned the rat: It's a placeholder!";
-		} else if(global.moveID == 4)
-		{
-			//heals 10 hp from player
-			currentMessage = "You healed!";
-			playerHP = playerHP + 10;
-			if(playerHP > 100) playerHP = 100;
+			else if(global.moveID == 2)
+			{
+				global.currentMessage = battlerName + " defended!";
+			} else if(global.moveID == 3)
+			{
+				//message for if scanning enemy
+				global.currentMessage = "You scanned the rat: It's a placeholder!";
+			} else if(global.moveID == 4)
+			{
+				//heals 10 hp from player
+				global.currentMessage = battlerName + " healed!";
+				global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + 25;
+				if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
+				{
+					global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+				}
+			}
+			
+			//end of turn stuff
+			//marks move was done
+			didMove = 1;
+			//tells dialogue what to show stuff
+			global.messagesLeft = 1;
+			global.messageToShow = 1;
+			//goes to next battler
+			currentBattler++;
+			while(global.battlersActive[currentBattler] == 0)
+			{
+				currentBattler++;
+				if(currentBattler >= 6) currentBattler = 0;
+			}
+			//resets stuff
+			didMove = 0;
+			global.moveID = 0;
+			//halts game to wait for dialogue progression
+			global.halted = 1;
+
+			//if either defeated, go back to start screen
 		}
-		//resets moveID for next turn
-		global.moveID = 0;
-		//records move has been done and selected
-		didMove = 1;
-		//alarm so text stays on screen for a short period before
-		//moving to next turn - will be changed to progress with space in future
-		alarm[0] = game_get_speed(gamespeed_fps);
 	}
-	
 } else {
-	if(didMove == 0)
-	{
-		//if enemy turn, just attack player
-		currentMessage = "The rat attacked!";
-		playerHP = playerHP - 5;
-		didMove = 1;
-		//add to message if player defeated
-		if(playerHP <= 0)
-		{
-			currentMessage = currentMessage + " Player fainted!";
-		}
-		//alarm (same as above)
-		alarm[0] = game_get_speed(gamespeed_fps);
-	}
+	//resets this again - unsure why but this is needed
+	global.moveID = 0;
 }
