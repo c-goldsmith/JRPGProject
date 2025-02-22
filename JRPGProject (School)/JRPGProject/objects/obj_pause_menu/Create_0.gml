@@ -3,10 +3,6 @@
 // Set up variables
 xDiff = x - camera_get_view_x(view_camera[0]);
 yDiff = y - camera_get_view_y(view_camera[0]);
-
-visible = false; // This menu needs to stay hidden until the escape key is pressed
-checkGamePause = 0; // initial pause menu position of highlighted text
-
 					
 draw_set_color(c_black); // Sets default text drawing color
 
@@ -42,3 +38,5 @@ pauseMenuText[3, 4] = "Back";
 pauseMenuLevel = 0;
 pauseMenuPos = 0;
 pauseMenuLength = 0;
+
+global.pauseMenuInst = -1;

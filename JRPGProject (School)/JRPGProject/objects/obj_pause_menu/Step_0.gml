@@ -16,7 +16,7 @@ var z_key_pressed = keyboard_check_pressed(ord("Z"));
 pauseMenuLength = array_length(pauseMenuText[pauseMenuLevel]);
 
 // Move up or down the submenu
-pauseMenuPos += up_key_pressed - down_key_pressed;
+pauseMenuPos += down_key_pressed - up_key_pressed;
 if pauseMenuPos >= pauseMenuLength {pauseMenuPos = 0};
 if pauseMenuPos < 0 {pauseMenuPos = pauseMenuLength - 1};
 
