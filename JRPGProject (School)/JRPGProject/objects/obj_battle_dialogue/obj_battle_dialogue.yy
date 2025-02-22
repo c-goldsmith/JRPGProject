@@ -11,8 +11,8 @@
   "name":"obj_battle_dialogue",
   "overriddenProperties":[],
   "parent":{
-    "name":"Children",
-    "path":"folders/Objects/Children.yy",
+    "name":"Battle Obj",
+    "path":"folders/Objects/Children/Battle Obj.yy",
   },
   "parentObjectId":{
     "name":"par_menu",
