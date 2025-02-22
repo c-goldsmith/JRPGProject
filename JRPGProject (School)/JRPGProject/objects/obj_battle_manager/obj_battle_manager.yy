@@ -13,8 +13,8 @@
   "name":"obj_battle_manager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Battle Obj",
+    "path":"folders/Objects/Children/Battle Obj.yy",
   },
   "parentObjectId":null,
   "persistent":false,
