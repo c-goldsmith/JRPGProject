@@ -30,7 +30,7 @@ if !(typerProgress >= (messageLength)) {
 		typerProgress = 0;
 	} else {
 		// Otherwise, destroy the dialogue system
-		global.inDialogue = false;
+		global.isDialogue = false;
 		instance_destroy(id);
 	}
 }
