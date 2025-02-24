@@ -13,10 +13,22 @@ currentTurn = 1;
 //communicate with the manager
 global.moveID = 0;
 //default message to display
-currentMessage = "Please select an option.";
+global.currentMessage = "Please select an option.";
 //variable for if move has been selected
 didMove = 0;
+global.halted = 0;
+battleEnd = false;
 
+//hardcoded right now - will be generalized later
+global.battlersNames =
+["Party 1", "Party 2", "Party 3", "Rat 1", "Rat 2", "Rat 3"];
+global.battlersCurrentHP = [100, 0, 0, 100, 0, 0];
+global.battlersMaxHP = [100, 100, 100, 100, 100, 100, 100];
+global.battlersActive = [1, 0, 0, 1, 0, 0];
+currentBattler = 0;
+battleTarget = 2;
+battlerName = "placeholder";
+defenderName = "placeholder2";
 
 
 

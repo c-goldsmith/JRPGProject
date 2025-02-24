@@ -10,14 +10,13 @@
 
 // Global variables
 global.areaExit = 0; // Used for determining which place exit inside an "area" was used,
-										 // to determine where on the big map to put the player
+					 // to determine where on the big map to put the player
 global.worldDate = { // Global date, used to measure time. This is the default time, August 10th, 1444.
-	day					: 10,
+	day		: 10,
 	month	: 8,
 	year	: 1444,
 	weekday : 6
 };
 
-global.isPaused = false;
-global.isDialogue = false;
-global.pauseMenuInst = -1;
+global.isPaused		= false;
+global.isDialogue	= false;
