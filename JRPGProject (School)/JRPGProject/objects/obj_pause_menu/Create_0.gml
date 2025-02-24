@@ -1,9 +1,6 @@
 /// @description Checks when created
 
 // Set up variables
-xDiff = x - camera_get_view_x(view_camera[0]);
-yDiff = y - camera_get_view_y(view_camera[0]);
-					
 draw_set_color(c_black); // Sets default text drawing color
 
 // Menu level 0
@@ -14,7 +11,7 @@ pauseMenuText[0, 3] = "Quit";
 
 // Menu level 1 - Party
 // (has placeholder text for now)
-pauseMenuText[1, 0] = "PartyMember1";
+pauseMenuText[1, 0] = "Rosette";
 pauseMenuText[1, 1] = "PartyMember2";
 pauseMenuText[1, 2] = "PartyMember3";
 pauseMenuText[1, 3] = "PartyMember4";
@@ -35,8 +32,7 @@ pauseMenuText[3, 2] = "Enemy3";
 pauseMenuText[3, 3] = "Enemy4";
 pauseMenuText[3, 4] = "Back";
 
+// Level, position, length of the Pause Menu
 pauseMenuLevel = 0;
 pauseMenuPos = 0;
 pauseMenuLength = 0;
-
-global.pauseMenuInst = -1;
