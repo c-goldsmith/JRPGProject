@@ -14,6 +14,7 @@ pauseMenuPos += down_key_pressed - up_key_pressed;
 if pauseMenuPos >= pauseMenuLength {pauseMenuPos = 0};
 if pauseMenuPos < 0 {pauseMenuPos = pauseMenuLength - 1};
 
+
 // Statement for selecting a highlighted option for each submenu
 if (space_key_pressed || z_key_pressed) {
 	switch (pauseMenuLevel) {
