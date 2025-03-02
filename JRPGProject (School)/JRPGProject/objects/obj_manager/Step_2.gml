@@ -1,22 +1,17 @@
 /// @description Pause State
 if (keyboard_check_pressed(vk_escape)) {
 	if (!(global.isPaused) && !(global.isDialogue)) {
-		global.isPaused = true;
-		obj_map_mover.moveSpd = 0; // Stop player movement
-		
-		// Get the position of the camera, then add the offsets to create
-		// pause menu object. So that the pause menu is positioned with
-		// respect to the camera position
-		var x_offset = 20;
-		var y_offset = 10;
-		var vx = camera_get_view_x(view_camera[0]) + x_offset;
-		var vy = camera_get_view_y(view_camera[0]) + y_offset;
-		
-		instance_create_layer(vx, vy,"Instances", obj_pause_menu);
+		if ((room != rm_start_test) && (room != rm_battle_test)) {
+			global.isPaused = true;
+			obj_map_mover.moveSpd = 0; // Stop player movement
+			
+			// Make the instance out of bounds
+			instance_create_layer(-200, -200,"Instances", obj_pause_menu);
+		}
 	}
 	else {
 		global.isPaused = false;
-		instance_destroy(obj_pause_menu);
-		obj_map_mover.moveSpd = 1; // Set player speed back
+		if instance_exists(obj_pause_menu) { instance_destroy(obj_pause_menu); }
+		if instance_exists(obj_map_mover) { obj_map_mover.moveSpd = 1; }
 	}
 }

@@ -2,6 +2,7 @@
 
 // Set up variables
 draw_set_color(c_black); // Sets default text drawing color
+draw_set_font(ft_basic); // Sets default drawing font
 
 // Menu level 0
 pauseMenuText[0, 0] = "Party";
