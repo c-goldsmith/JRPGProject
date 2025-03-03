@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GMLTest_Manager",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GMLTest_Manager",
+  "parent":{
+    "name":"JRPGProject",
+    "path":"JRPGProject.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
