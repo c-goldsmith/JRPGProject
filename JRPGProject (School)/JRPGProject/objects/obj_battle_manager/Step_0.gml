@@ -10,18 +10,18 @@ if(global.halted == 0)
 	}
 	//checks who the battler is
 	
-	if(currentBattler == 0)
+	if(global.currentBattler == 0)
 	{
 		battleTarget = 3;
 	} else {
 		battleTarget = 0;
 	}
 	
-	battlerName = global.battlersNames[currentBattler];
+	battlerName = global.battlersNames[global.currentBattler];
 	defenderName = global.battlersNames[battleTarget];
 	
 	//if one of the enemies attacking - makes choice for them
-	if(currentBattler >= 2)
+	if(global.currentBattler >= 2)
 	{
 		global.moveID = 1;
 	}
@@ -30,7 +30,7 @@ if(global.halted == 0)
 	if(didMove == 0)
 	{
 		//this will be removed
-		if(currentBattler == 0)
+		if(global.currentBattler == 0)
 		{
 			global.currentMessage = "Please select option.";
 		}
@@ -64,10 +64,10 @@ if(global.halted == 0)
 			{
 				//heals 10 hp from player
 				global.currentMessage = battlerName + " healed!";
-				global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + 25;
-				if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
+				global.battlersCurrentHP[global.currentBattler] = global.battlersCurrentHP[global.currentBattler] + 25;
+				if(global.battlersCurrentHP[global.currentBattler] >= global.battlersMaxHP[global.currentBattler]) 
 				{
-					global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+					global.battlersCurrentHP[global.currentBattler] = global.battlersMaxHP[global.currentBattler];
 				}
 			}
 			
@@ -78,11 +78,11 @@ if(global.halted == 0)
 			global.messagesLeft = 1;
 			global.messageToShow = 1;
 			//goes to next battler
-			currentBattler++;
-			while(global.battlersActive[currentBattler] == 0)
+			global.currentBattler++;
+			while(global.battlersActive[global.currentBattler] == 0)
 			{
-				currentBattler++;
-				if(currentBattler >= 6) currentBattler = 0;
+				global.currentBattler++;
+				if(global.currentBattler >= 6) global.currentBattler = 0;
 			}
 			//resets stuff
 			didMove = 0;

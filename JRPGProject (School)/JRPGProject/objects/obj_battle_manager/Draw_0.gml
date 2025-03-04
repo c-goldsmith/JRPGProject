@@ -7,7 +7,7 @@ draw_text(20, 20, "Player HP: " + string(global.battlersCurrentHP[0]) + "/100");
 draw_text(20, 40, "Enemy HP: " + string(global.battlersCurrentHP[3]) + "/100");
 /*
 Bug Testing Messages:
-draw_text(20, 60, "Current Battler: " + string(currentBattler));
+draw_text(20, 60, "Current Battler: " + string(global.currentBattler));
 draw_text(20, 80, "Battle Target: " + string(battleTarget));
 */
 
