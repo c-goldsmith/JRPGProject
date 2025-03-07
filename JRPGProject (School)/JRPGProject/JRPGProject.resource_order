@@ -36,6 +36,8 @@
     {"name":"obj_battle_menu_test","order":2,"path":"objects/obj_battle_menu_test/obj_battle_menu_test.yy",},
     {"name":"obj_dialogue","order":3,"path":"objects/obj_dialogue/obj_dialogue.yy",},
     {"name":"obj_enemy_plate_1","order":3,"path":"objects/obj_enemy_plate_1/obj_enemy_plate_1.yy",},
+    {"name":"obj_enemy_plate_2","order":6,"path":"objects/obj_enemy_plate_2/obj_enemy_plate_2.yy",},
+    {"name":"obj_enemy_plate_3","order":7,"path":"objects/obj_enemy_plate_3/obj_enemy_plate_3.yy",},
     {"name":"obj_manager","order":2,"path":"objects/obj_manager/obj_manager.yy",},
     {"name":"obj_party_plate_1","order":4,"path":"objects/obj_party_plate_1/obj_party_plate_1.yy",},
     {"name":"obj_pause_menu","order":5,"path":"objects/obj_pause_menu/obj_pause_menu.yy",},

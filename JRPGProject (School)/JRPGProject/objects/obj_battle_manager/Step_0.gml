@@ -10,9 +10,11 @@ if(global.halted == 0)
 	}
 	//checks who the battler is
 	
-	if(currentBattler == 0)
+	if(currentBattler < 3)
 	{
 		battleTarget = 3;
+		if(global.battlersActive[3] == 0) battleTarget = 4;
+		if(global.battlersActive[4] == 0) battleTarget = 5;
 	} else {
 		battleTarget = 0;
 	}
@@ -40,16 +42,20 @@ if(global.halted == 0)
 			//checks what move was done (will change to switch)
 			if(global.moveID == 1)
 			{
-				global.battlersCurrentHP[battleTarget] = global.battlersCurrentHP[battleTarget] - 15;
+				global.battlersCurrentHP[battleTarget] = global.battlersCurrentHP[battleTarget] - (15 * battlersAttack[currentBattler]/battlersDefense[battleTarget]);
 				if(global.battlersCurrentHP[battleTarget] <= 0) global.battlersCurrentHP[battleTarget] = 0;
 			
-				global.currentMessage = battlerName + " attacked " 
-					+ defenderName + "!";
+				global.currentMessage = battlerName + " attacked " + defenderName + "!";
+					
+				if(global.battlersCurrentHP[battleTarget] <= 0) 
+				{
+					global.currentMessage = defenderName + " was defeated!";
+					global.battlersActive[battleTarget] = 0;
+				}
+				
 				if((global.battlersCurrentHP[0] + global.battlersCurrentHP[1] + global.battlersCurrentHP[2] <= 0) 
 					|| (global.battlersCurrentHP[3]  + global.battlersCurrentHP[4] + global.battlersCurrentHP[5] <= 0)) 
 				{
-					global.currentMessage = global.currentMessage + " " + defenderName 
-						+ " fainted!";
 						battleEnd = true;
 				}
 			}
@@ -74,21 +80,24 @@ if(global.halted == 0)
 			//end of turn stuff
 			//marks move was done
 			didMove = 1;
+			global.selectedEnemy = 0;
 			//tells dialogue what to show stuff
 			global.messagesLeft = 1;
 			global.messageToShow = 1;
 			//goes to next battler
 			currentBattler++;
+			if(currentBattler == 6) currentBattler = 0;
 			while(global.battlersActive[currentBattler] == 0)
 			{
 				currentBattler++;
-				if(currentBattler >= 6) currentBattler = 0;
+				if(currentBattler == 6) currentBattler = 0;
 			}
 			//resets stuff
 			didMove = 0;
 			global.moveID = 0;
 			//halts game to wait for dialogue progression
 			global.halted = 1;
+			
 
 			//if either defeated, go back to start screen
 		}
