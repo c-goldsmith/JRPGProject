@@ -19,11 +19,11 @@ if(global.halted == 0)
 		battleTarget = 0;
 	}
 	
-	battlerName = global.battlersNames[currentBattler];
+	battlerName = global.battlersNames[global.currentBattler];
 	defenderName = global.battlersNames[battleTarget];
 	
 	//if one of the enemies attacking - makes choice for them
-	if(currentBattler >= 2)
+	if(global.currentBattler >= 2)
 	{
 		global.moveID = 1;
 	}
@@ -74,7 +74,7 @@ if(global.halted == 0)
 				//makes sure to not heal above HP cap
 				if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
 				{
-					global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+					global.battlersCurrentHP[global.currentBattler] = global.battlersMaxHP[global.currentBattler];
 				}
 			} else if(global.moveID == 5)
 			{

@@ -11,7 +11,7 @@ draw_text(20, 297, "Player HP: " + string(global.battlersCurrentHP[0]) + "/100")
 
 /*
 Bug Testing Messages:
-draw_text(20, 60, "Current Battler: " + string(currentBattler));
+draw_text(20, 60, "Current Battler: " + string(global.currentBattler));
 draw_text(20, 80, "Battle Target: " + string(battleTarget));
 */
 
