@@ -19,11 +19,11 @@ if(global.halted == 0)
 		battleTarget = 0;
 	}
 	
-	battlerName = global.battlersNames[global.currentBattler];
+	battlerName = global.battlersNames[currentBattler];
 	defenderName = global.battlersNames[battleTarget];
 	
 	//if one of the enemies attacking - makes choice for them
-	if(global.currentBattler >= 2)
+	if(currentBattler >= 3)
 	{
 		global.moveID = 1;
 	}
