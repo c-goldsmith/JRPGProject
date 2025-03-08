@@ -40,7 +40,7 @@
           -3,0,2,1,13,-24,10,-21,-2147483648,-3,0,1,9,-25,10,-21,-2147483648,-3,0,1,9,-25,10,-21,-2147483648,-2,
           0,2,1,13,-25,10,-21,-2147483648,-2,0,1,9,-26,10,-21,-2147483648,-2,0,1,9,-26,10,-21,-2147483648,-2,0,
           1,9,-26,10,-21,-2147483648,-2,0,1,9,-26,10,-21,-2147483648,3,0,1,13,-26,10,-22,-2147483648,1,9,-27,10,
-        ],"TileDataFormat":1,},"tilesetId":{"name":"ts_bigmap_walkspeed","path":"tilesets/ts_bigmap_walkspeed/ts_bigmap_walkspeed.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+        ],"TileDataFormat":1,},"tilesetId":{"name":"ts_bigmap_walkspeed","path":"tilesets/ts_bigmap_walkspeed/ts_bigmap_walkspeed.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Bounding","depth":300,"effectEnabled":true,"effectType":"none","gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Bounding","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":50,"SerialiseWidth":50,"TileCompressedData":[
           -63,10,2,4,5,-11,10,4,4,18,18,5,-5,10,3,4,18,5,-5,10,3,4,18,5,-4,10,4,6,21,18,5,-4,10,8,4,18,5,10,10,
           12,26,5,-9,10,5,4,19,-2147483648,-2147483648,9,-5,10,4,11,-2147483648,17,5,-4,10,4,11,-2147483648,17,
@@ -96,7 +96,7 @@
           1,2,2,3,1,13,10,12,3,1,13,-15,10,13,12,2,3,-2147483648,-2147483648,1,2,2,3,-2147483648,-2147483648,1,
           13,-4,10,8,12,2,3,-2147483648,-2147483648,1,2,13,-7,10,2,12,13,-18,10,10,12,2,2,13,10,10,12,2,2,13,-7,
           10,4,12,2,2,13,-16,10,
-        ],"TileDataFormat":1,},"tilesetId":{"name":"ts_bigmap_block","path":"tilesets/ts_bigmap_block/ts_bigmap_block.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+        ],"TileDataFormat":1,},"tilesetId":{"name":"ts_bigmap_block","path":"tilesets/ts_bigmap_block/ts_bigmap_block.yy",},"userdefinedDepth":false,"visible":false,"x":0,"y":0,},
     {"$GMRLayer":"","%Name":"DecorTilemaps","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[
         {"$GMRTileLayer":"","%Name":"CoverTiles_Top","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"CoverTiles_Top","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":50,"SerialiseWidth":50,"TileCompressedData":[
               -8,42,1,43,-3,0,2,49,37,-21,42,4,36,50,50,37,-12,42,2,36,37,-5,42,2,44,35,-3,0,3,49,50,37,-7,42,1,36,
