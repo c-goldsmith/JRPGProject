@@ -74,7 +74,7 @@ if(global.halted == 0)
 				//makes sure to not heal above HP cap
 				if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
 				{
-					global.battlersCurrentHP[global.currentBattler] = global.battlersMaxHP[global.currentBattler];
+					global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
 				}
 			} else if(global.moveID == 5)
 			{
