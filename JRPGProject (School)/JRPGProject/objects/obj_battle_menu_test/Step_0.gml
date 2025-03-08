@@ -44,9 +44,12 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 			{
 				visible = 0;
 				global.moveID = 2;
-			}
-		
-			
+			} else {
+				global.moveID = 5;
+				visible = 0;
+				onSpellMenu = 0;
+				textToDisplay = battleText;
+			}	
 		break;
 		
 		case 3: // Exit to main menu - this will be replaced with run 
