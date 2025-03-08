@@ -9,6 +9,12 @@ moveX = 0;
 
  // Keyboard movement check
 if ((global.isPaused == false) && (global.isDialogue == false)) {
+	if (place_meeting(x, y, layer_tilemap_get_id("WalkSpeed"))) {
+		moveSpd = 0.75;
+	} else {
+		moveSpd = 1;
+	}
+	
 	if (keyboard_check(vk_up) || keyboard_check(ord("W"))) {
 		moveY -= moveSpd; 
 		sprIdle = spr_bigmap_mover_north_idle;
@@ -34,7 +40,7 @@ if ((global.isPaused == false) && (global.isDialogue == false)) {
 if !(keyboard_check(vk_up) || (keyboard_check(ord("W")))
 	|| (keyboard_check(vk_down)) || (keyboard_check(ord("S")))
 	|| (keyboard_check(vk_left)) || (keyboard_check(ord("A")))
-	|| (keyboard_check(vk_right)) || (keyboard_check(ord("D")))) 
+	|| (keyboard_check(vk_right)) || (keyboard_check(ord("D")))) || (global.isPaused) || (global.isDialogue)
 	{
 	sprite_index = sprIdle;
 } else {
@@ -42,12 +48,12 @@ if !(keyboard_check(vk_up) || (keyboard_check(ord("W")))
 }
 
  // Actual movement logic
-move_and_collide(moveX, moveY, layer_tilemap_get_id("Bounding"), 4, 0, 0, 1, 1);
+move_and_collide(moveX, moveY, layer_tilemap_get_id("Bounding"), 4, 0, 0, moveSpd, moveSpd);
 
 if (x != oldX) || (y != oldY) {
 	charSteps += travelSpd;
 	
-	if (charSteps >= 50) {
+	if (charSteps >= 100) {
 		charSteps = 0;
 		global.worldDate = advance_date(global.worldDate.day, global.worldDate.month, global.worldDate.year);
 	}

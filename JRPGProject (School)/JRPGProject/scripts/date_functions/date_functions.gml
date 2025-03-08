@@ -193,5 +193,13 @@ function ordinal_suffix(num) {
 			break;
 	}
 	
+	switch (num % 100) {
+		case 11:
+		case 12:
+		case 13:
+			ordinal = string(num) + "th";
+			break;
+	}
+	
 	return ordinal;
 };

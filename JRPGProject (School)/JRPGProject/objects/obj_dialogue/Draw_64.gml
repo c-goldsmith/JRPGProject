@@ -1,7 +1,7 @@
 
 // Create the box
 if (messageSpeaker[messageProgress] != undefined) {
-	draw_sprite_ext(spr_menu_back, 0, 29, 190, (string_width(messageSpeaker[messageProgress])+24)/78, 50/78, 0, c_white, 1);
+	draw_sprite_ext(spr_menu_back, 0, 29, 185, (string_width(messageSpeaker[messageProgress])+24)/78, 50/78, 0, c_white, 1);
 }
 draw_sprite_ext(spr_menu_back, 0, 20, 210, 380/78, 90/78, 0, c_white, 1);
 
