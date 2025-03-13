@@ -55,6 +55,7 @@
     {"name":"GMLTest_Tests","order":20,"path":"scripts/GMLTest_Tests/GMLTest_Tests.yy",},
     {"name":"holiday_function","order":3,"path":"scripts/holiday_function/holiday_function.yy",},
     {"name":"ParameterExample","order":1,"path":"scripts/ParameterExample/ParameterExample.yy",},
+    {"name":"Pause_Menu_Tests","order":3,"path":"scripts/Pause_Menu_Tests/Pause_Menu_Tests.yy",},
     {"name":"StandardExample","order":2,"path":"scripts/StandardExample/StandardExample.yy",},
     {"name":"spr_bigmap_inspect_Button","order":6,"path":"sprites/spr_bigmap_inspect_Button/spr_bigmap_inspect_Button.yy",},
     {"name":"spr_bigmap_mover_east_walk","order":4,"path":"sprites/spr_bigmap_mover_east_walk/spr_bigmap_mover_east_walk.yy",},

@@ -14,10 +14,13 @@ for (var i=0; i<pauseMenuLength; i++) {
 var new_sprite_w = temp_string_w+25; // new sprite width
 var new_sprite_h = (pauseMenuLength*22)+10; // new sprite heigth
 
-dx = 43; // where to draw the sprite at x corrdinate
-dy = 25; // where to draw the sprite at y coordinate
-xs = new_sprite_w/sprite_width; // xscale of sprite
-ys = new_sprite_h/sprite_width; // yscale of sprite
+var dx = 43; // where to draw the sprite at x corrdinate
+var dy = 25; // where to draw the sprite at y coordinate
+var xs = new_sprite_w/sprite_width; // xscale of sprite
+var ys = new_sprite_h/sprite_width; // yscale of sprite
+
+global.pausetest_arg7 = xs; 
+global.pausetest_arg8 = ys;
 
 draw_sprite_ext(sprite_index,image_index,dx,dy,xs,ys,0,c_white,1);
 
@@ -33,6 +36,7 @@ for (var i=0; i<pauseMenuLength; i++) { // Sets color based on current text posi
 	}
 
 }
+checki = i; // Store i's value for testing
 
 // Reset color back to black
 draw_set_color(c_black);

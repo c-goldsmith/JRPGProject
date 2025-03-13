@@ -82,6 +82,7 @@
     {"id":{"name":"GMLTest_Tests","path":"scripts/GMLTest_Tests/GMLTest_Tests.yy",},},
     {"id":{"name":"holiday_function","path":"scripts/holiday_function/holiday_function.yy",},},
     {"id":{"name":"ParameterExample","path":"scripts/ParameterExample/ParameterExample.yy",},},
+    {"id":{"name":"Pause_Menu_Tests","path":"scripts/Pause_Menu_Tests/Pause_Menu_Tests.yy",},},
     {"id":{"name":"StandardExample","path":"scripts/StandardExample/StandardExample.yy",},},
     {"id":{"name":"back_start_test","path":"sprites/back_start_test/back_start_test.yy",},},
     {"id":{"name":"spr_battleRat_test","path":"sprites/spr_battleRat_test/spr_battleRat_test.yy",},},
