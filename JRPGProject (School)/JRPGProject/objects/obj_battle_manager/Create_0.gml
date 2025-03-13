@@ -17,7 +17,7 @@ global.currentMessage = "Please select an option.";
 //variable for if move has been selected
 didMove = 0;
 global.halted = 0;
-battleEnd = false;
+global.battleEnd = false;
 
 //hardcoded right now - will be generalized later
 global.battlersNames =
@@ -34,15 +34,18 @@ battlersDefending = [0, 0, 0, 0, 0, 0];
 currentBattler = 0;
 battleTarget = 2;
 
+global.currentTurn = currentBattler;
+
 
 battlerName = "placeholder";
 defenderName = "placeholder";
-
 
 damageDealt = 0;
 failedMove = 0;
 
 global.selectedEnemy = 0;
+
+
 
 
 

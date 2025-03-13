@@ -3,7 +3,8 @@
 
 //Use the function "gmltest_start()" to run tests
 
-test("Basic Standard Test", function(){
+/*
+xtest("Basic Standard Test", function(){
 	gmltest_expect_true(true);
 });
 
@@ -13,3 +14,4 @@ test("Basic Standard Test", function(){
 xtest("Basic Disabled Test", function(){
 	gmltest_expect_true(false); 
 });
+*/

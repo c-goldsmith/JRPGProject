@@ -4,10 +4,11 @@
 //checks if it's player or enemy turn
 if(global.halted == 0)
 {
-	if(battleEnd)
+	if(global.battleEnd)
 	{
 		room_goto(rm_start_test);
 	}
+
 	//checks who the battler is
 	
 	if(currentBattler < 3)
@@ -106,10 +107,10 @@ if(global.halted == 0)
 			}
 			
 			//checks if battle ended (all enemies or all allies are inactive)
-			if((global.battlersCurrentHP[0] + global.battlersCurrentHP[1] + global.battlersCurrentHP[2] <= 0) 
-				|| (global.battlersCurrentHP[3]  + global.battlersCurrentHP[4] + global.battlersCurrentHP[5] <= 0)) 
+			if((global.battlersCurrentHP[0] + global.battlersCurrentHP[1] + global.battlersCurrentHP[2] == 0) 
+				|| (global.battlersCurrentHP[3]  + global.battlersCurrentHP[4] + global.battlersCurrentHP[5] == 0)) 
 			{
-					battleEnd = true;
+					global.battleEnd = true;
 			}
 			
 			//end of turn stuff
@@ -127,6 +128,7 @@ if(global.halted == 0)
 				currentBattler++;
 				if(currentBattler == 6) currentBattler = 0;
 			}
+			global.currentTurn = currentBattler;
 			
 			//resets stuff
 			didMove = 0;
