@@ -49,13 +49,14 @@ test("Current Turn is Valid", function(){
 	gmltest_expect_lt(6, currentTurn);
 });
 
+//Another Black Box Test for Turns
 test("Current Battler Exists", function(){
 	//makes sure battler actually exists
 	gmltest_expect_true(global.battlersActive[currentTurn]);
 });
 
 
-//Integration Testing for Enemy Instance
+//Set up for Integration Testing for Enemy Instance
 function testEnemy1() : GMLTest_Harness() constructor {
 	
 	enemyInstance = noone;
@@ -74,6 +75,7 @@ function testEnemy1() : GMLTest_Harness() constructor {
 	
 }
 
+//Actual Integration Testing
 //Enemy 1 is an object dependant on the Battle Manager. It should always spawn, so it checks that it does.
 test_f(testEnemy1, "Enemy 1 Spawns Correctly", function(){
 	gmltest_expect_true(global.battlersActive[3]);
