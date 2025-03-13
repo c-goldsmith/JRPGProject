@@ -44,7 +44,7 @@ test("Battle Has Not Ended: BattleEnd False", function(){
 
 // Black Box Testing for Turns
 test("Current Turn is Valid", function(){
-	//Makes sure it doesn't go out of expected turn range
+	//Makes sure it doesn't go out of battler amount range
 	gmltest_expect_gt(-1, currentTurn);
 	gmltest_expect_lt(6, currentTurn);
 });
@@ -53,6 +53,7 @@ test("Current Battler Exists", function(){
 	//makes sure battler actually exists
 	gmltest_expect_true(global.battlersActive[currentTurn]);
 });
+
 
 //Integration Testing for Enemy Instance
 function testEnemy1() : GMLTest_Harness() constructor {
@@ -79,7 +80,7 @@ test_f(testEnemy1, "Enemy 1 Spawns Correctly", function(){
 	gmltest_expect_eq(global.battlersNames[3], enemyInstance.enemyName);
 });
 
-//This tests to make sure the label text for Enemy 1 is within the given borders
+//Black Box Test to make sure Enemy 1 label is within boundaries
 test_f(testEnemy1, "Enemy 1 Text Within Border Boundaries", function(){
 	gmltest_expect_gt(enemyInstance.x, enemyInstance.textX);
 	gmltest_expect_gt(enemyInstance.y, enemyInstance.textY);
