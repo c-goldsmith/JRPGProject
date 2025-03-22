@@ -11,6 +11,8 @@
     {"name":"inst_7D6CF397","path":"rooms/rm_battle_test/rm_battle_test.yy",},
     {"name":"inst_C3F76C5","path":"rooms/rm_battle_test/rm_battle_test.yy",},
     {"name":"inst_6E503C93","path":"rooms/rm_battle_test/rm_battle_test.yy",},
+    {"name":"inst_1BF18F26","path":"rooms/rm_battle_test/rm_battle_test.yy",},
+    {"name":"inst_6CEA382B","path":"rooms/rm_battle_test/rm_battle_test.yy",},
     {"name":"inst_2090DC7","path":"rooms/rm_battle_test/rm_battle_test.yy",},
     {"name":"inst_6037D05E","path":"rooms/rm_battle_test/rm_battle_test.yy",},
   ],
