@@ -6,7 +6,7 @@ draw_set_color(c_black);
 var oldFont = draw_get_font();
 draw_set_font(ft_basic);
 
-draw_text(x+25, y + 2, global.battlersNames[5]);
+draw_text(textX, textY, enemyName);
 // Reset color back to black
 
 draw_set_color(c_black);

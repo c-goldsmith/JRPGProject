@@ -19,8 +19,10 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 				global.moveID = 3;
 				onSpellMenu = 0;
 				textToDisplay = battleText;
+				
 			}
 			visible = 0;
+			battleMenuSelect = 0;
 			
 		break;
 		
@@ -36,6 +38,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 				onSpellMenu = 0;
 				textToDisplay = battleText;
 			}
+			battleMenuSelect = 0;
 		
 		break;
 		
@@ -49,7 +52,8 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 				visible = 0;
 				onSpellMenu = 0;
 				textToDisplay = battleText;
-			}	
+			}
+			battleMenuSelect = 0;
 		break;
 		
 		case 3: // Exit to main menu - this will be replaced with run 
@@ -61,6 +65,7 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 				onSpellMenu = 0;
 				textToDisplay = battleText;
 			}
+			battleMenuSelect = 0;
 		break;
 	}
 }
