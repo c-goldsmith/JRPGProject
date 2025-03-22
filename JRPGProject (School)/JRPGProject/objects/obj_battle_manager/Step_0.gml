@@ -26,7 +26,7 @@ if(global.halted == 0)
 	//if one of the enemies attacking - makes choice for them
 	if(currentBattler >= 3)
 	{
-		global.moveID = choose(1, 1, 1, 1, 2)
+		global.moveID = choose(1, 1, 2, 1, 1);
 	}
 
 	//if haven't already done move...
@@ -79,17 +79,18 @@ if(global.halted == 0)
 					global.currentMessage = "Don't have enough MP!";
 					currentBattler--;
 					if(currentBattler == -1) currentBattler = 6;
-				}
+				} else {
 				//heals half of player's HP
-				global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 10;
-				if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = 0;
+					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 10;
+					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = 0;
 					
-				global.currentMessage = battlerName + " healed!";
-				global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + (global.battlersMaxHP[currentBattler]/2);
-				//makes sure to not heal above HP cap
-				if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
-				{
-					global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+					global.currentMessage = battlerName + " healed!";
+					global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + (global.battlersMaxHP[currentBattler]/2);
+					//makes sure to not heal above HP cap
+					if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
+					{
+						global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+					}
 				}
 			} else if(global.moveID == 5)
 			{
