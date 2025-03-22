@@ -44,6 +44,7 @@
     {"name":"obj_pause_menu","order":5,"path":"objects/obj_pause_menu/obj_pause_menu.yy",},
     {"name":"obj_tester","order":6,"path":"objects/obj_tester/obj_tester.yy",},
     {"name":"test_object","order":1,"path":"objects/test_object/test_object.yy",},
+    {"name":"compare_nums_functions","order":3,"path":"scripts/compare_nums_functions/compare_nums_functions.yy",},
     {"name":"GMLTest_Helpers","order":16,"path":"scripts/GMLTest_Helpers/GMLTest_Helpers.yy",},
     {"name":"GMLTest_Manager","order":17,"path":"scripts/GMLTest_Manager/GMLTest_Manager.yy",},
     {"name":"GMLTest_Matchers","order":18,"path":"scripts/GMLTest_Matchers/GMLTest_Matchers.yy",},

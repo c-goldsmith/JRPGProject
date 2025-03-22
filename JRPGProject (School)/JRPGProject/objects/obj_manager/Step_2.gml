@@ -12,7 +12,4 @@ if (keyboard_check_pressed(vk_escape)) {
 		global.isPaused = false;
 		if instance_exists(obj_pause_menu) { instance_destroy(obj_pause_menu); }
 	}
-	pause_blackBox_Tests(); // For testing
-	checkpause_dialoguetest(); // For testing the dialogue with pause function
-	gmltest_start();
 }

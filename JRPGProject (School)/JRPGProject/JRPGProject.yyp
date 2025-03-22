@@ -69,6 +69,7 @@
     {"id":{"name":"rm_battle_test","path":"rooms/rm_battle_test/rm_battle_test.yy",},},
     {"id":{"name":"rm_map_1","path":"rooms/rm_map_1/rm_map_1.yy",},},
     {"id":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
+    {"id":{"name":"compare_nums_functions","path":"scripts/compare_nums_functions/compare_nums_functions.yy",},},
     {"id":{"name":"date_functions","path":"scripts/date_functions/date_functions.yy",},},
     {"id":{"name":"FixtureExample","path":"scripts/FixtureExample/FixtureExample.yy",},},
     {"id":{"name":"GMLTest_Helpers","path":"scripts/GMLTest_Helpers/GMLTest_Helpers.yy",},},
