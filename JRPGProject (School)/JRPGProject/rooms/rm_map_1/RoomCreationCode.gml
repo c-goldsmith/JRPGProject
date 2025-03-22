@@ -1,7 +1,7 @@
 
 // Set up enter x and enter y- should be the default for the room
-enterX = 90;
-enterY = 130;
+enterX = 615;
+enterY = 1080;
 
 // If exit isn't 0, change to different x and y based on the location of that exit
 

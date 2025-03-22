@@ -12,6 +12,6 @@ if (keyboard_check_pressed(vk_space) && visible == 1)
 	//if reaches end - closes it
 	if(global.messagesLeft == 0)
 	{
-		alarm[0] = 0.05 * game_get_speed(gamespeed_fps);
+		alarm[0] = 0.95 * game_get_speed(gamespeed_fps);
 	}
 }

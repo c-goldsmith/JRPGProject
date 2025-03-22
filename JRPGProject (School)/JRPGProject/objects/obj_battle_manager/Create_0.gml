@@ -22,16 +22,27 @@ battleEnd = false;
 //hardcoded right now - will be generalized later
 global.battlersNames =
 ["Rosette", "Party 2", "Party 3", "Rat 1", "Rat 2", "Rat 3"];
-global.battlersCurrentHP = [100, 0, 0, 100, 0, 0];
-global.battlersMaxHP = [100, 100, 100, 100, 100, 100, 100];
-global.battlersActive = [1, 0, 0, 1, 0, 0];
-global.currentBattler = 0;
+
+global.battlersCurrentHP = [100, 0, 0, 75, 75, 75];
+global.battlersMaxHP = [100, 100, 100, 75, 75, 75, 75];
+global.partyCurrentMP = [50, 0, 0];
+global.partyMaxMP = [50, 0, 0];
+global.battlersActive = [1, 0, 0, 1, 1, 1];
+battlersAttack = [50, 50, 50, 25, 25, 25];
+battlersDefense = [75, 75, 75, 25, 25, 25];
+battlersDefending = [0, 0, 0, 0, 0, 0];
+currentBattler = 0;
 battleTarget = 2;
 
 
 battlerName = "placeholder";
 defenderName = "placeholder";
 
+
+damageDealt = 0;
+failedMove = 0;
+
+global.selectedEnemy = 0;
 
 
 
