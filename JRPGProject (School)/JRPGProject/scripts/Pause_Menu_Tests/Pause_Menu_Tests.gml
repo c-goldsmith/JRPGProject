@@ -7,23 +7,7 @@ function pause_whiteBox_Tests() {
 	test("Check array bounds Pause Menu's Draw GUI", function() {
 		gmltest_expect_true(isEqualsNum(global.pausetest_arg1,global.pausetest_arg2))
 	});
-	/* procedure to be tested with this white box test:
-	-------------------------------------
-	// From obj_pause_menu Draw GUI:
-	// Draw the text
-	for (var i=0; i<pauseMenuLength; i++) { // Sets color based on current text position, then draws that row of text.
-	
-		if (pauseMenuPos = i) { // Set color
-			draw_set_color(c_black); // Highlighted color
-			draw_text(55, 30+(i*22), pauseMenuText[pauseMenuLevel,i]+" <");
-		} else {
-			draw_set_color(c_grey); // Not highlighted color
-			draw_text(55, 30+(i*22), pauseMenuText[pauseMenuLevel,i]);
-		}
 
-	}
-	checki = i; // Store i's value for testing
-	*/
 
 	// #2 Whitebox Test - For testing if the pause menu position number is still within bounds of
 	// the length of the array. Mutants may go out of bounds of the array so I
@@ -37,15 +21,6 @@ function pause_whiteBox_Tests() {
 		gmltest_expect_true(isLTorEqualsNum(global.pausetest_arg3,global.pausetest_arg4))
 	});
 	
-	/* procedure checked with this white test:
-	-------------------------------------
-	// From obj_pause_menu Draw GUI:
-	// Move up or down the submenu
-	pauseMenuPos += down_key_pressed - up_key_pressed;
-	if pauseMenuPos >= pauseMenuLength {pauseMenuPos = 0};
-	if pauseMenuPos < 0 {pauseMenuPos = pauseMenuLength - 1};
-	*/
-	
 	// #3 Whitebox Tests - For testing the bound of the pause menu level. Mutants may go out of bounds.
 	// Covers 4 branches here. This checks the switch statements hardcoding the
 	// pause menu level to make sure it's not negative or beyond the bound of the array.
@@ -56,16 +31,6 @@ function pause_whiteBox_Tests() {
 	test("Check if Pause Menu Level is <= 3", function() {
 		gmltest_expect_true(isLTorEqualsNum(global.pausetest_arg3,global.pausetest_arg4))
 	});
-		/* Procedure the white test checks for:
-	----------------------------------
-	// From obj_pause_menu Step:
-	checks the pauseMenuLevel variable
-
-	// From obj_pause_menu Press P
-	global.pausetest_arg5 = pauseMenuLevel; 
-	global.pausetest_arg6 = 3;
-	*/
-	
 	
 	// #4 Whitebox Tests - Checks the dimensions of the dynamically sized pause menu GUI, and
 	// Check if it's at least 1 (or not 0 or lower) for all dimensions
@@ -73,18 +38,9 @@ function pause_whiteBox_Tests() {
 		gmltest_expect_true(isGTorEqualsNum(global.pausetest_arg7,1))
 	});
 	
-	test("Check if ys for Pause Menu Draw GUI >= 1 ", function() {
+	test("Check if ys for Pause Menu Draw GUI >= 1", function() {
 		gmltest_expect_true(isGTorEqualsNum(global.pausetest_arg8,1))
 	});
-	/* Procedure the white test checks for:
-	----------------------------------
-	// From obj_pause_menu Draw GUI:
-	var xs = new_sprite_w/sprite_width; // xscale of sprite
-	var ys = new_sprite_h/sprite_width; // yscale of sprite
-
-	global.pausetest_arg7 = xs; 
-	global.pausetest_arg8 = ys;
-	*/
 }
 
 // Black box Tests for checking the pause functionality in different
@@ -130,30 +86,4 @@ function checkpause_dialoguetest() {
 			gmltest_expect_false(global.isPaused)
 		});	
 	}
-}
-	
-// Helper functions for comparing two numbers, do not count them as tests
-
-///@description Compares two values and checks if they're equal to each other.
-///@param {*} valx
-///@param {*} valy
-function isEqualsNum(valx, valy) {
-	if (valx == valy) return true;
-	return false;
-}
-
-///@description Checks if valx is greater than or equal to valy.
-///@param {*} valx
-///@param {*} valy
-function isGTorEqualsNum(valx, valy) {
-	if (valx >= valy) return true;
-	return false;
-}
-
-///@description Checks if valx is less than or equal to valy.
-///@param {*} valx
-///@param {*} valy
-function isLTorEqualsNum(valx, valy) {
-	if (valx <= valy) return true;
-	return false;
 }
