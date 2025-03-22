@@ -4,6 +4,8 @@
 //Most of this code will be further edited later. Right now things are just 
 //hard-coded.
 
+//randomise seed
+randomise();
 //set player and enemy hp at start of battle
 enemyHP = 100;
 playerHP = 100;
@@ -23,11 +25,11 @@ battleEnd = false;
 global.battlersNames =
 ["Rosette", "Party 2", "Party 3", "Rat 1", "Rat 2", "Rat 3"];
 
-global.battlersCurrentHP = [100, 0, 0, 75, 75, 75];
+global.battlersCurrentHP = [100, 100, 0, 75, 75, 75];
 global.battlersMaxHP = [100, 100, 100, 75, 75, 75, 75];
-global.partyCurrentMP = [50, 0, 0];
-global.partyMaxMP = [50, 0, 0];
-global.battlersActive = [1, 0, 0, 1, 1, 1];
+global.partyCurrentMP = [50, 75, 0];
+global.partyMaxMP = [50, 75, 0];
+global.battlersActive = [1, 1, 0, 1, 1, 1];
 battlersAttack = [50, 50, 50, 25, 25, 25];
 battlersDefense = [75, 75, 75, 25, 25, 25];
 battlersDefending = [0, 0, 0, 0, 0, 0];
