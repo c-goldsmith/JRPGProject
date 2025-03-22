@@ -6,7 +6,9 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_51818C54","path":"rooms/rm_map_1/rm_map_1.yy",},
+    {"name":"city_vanikia","path":"rooms/rm_map_1/rm_map_1.yy",},
+    {"name":"city_sortia","path":"rooms/rm_map_1/rm_map_1.yy",},
+    {"name":"city_ruinoka","path":"rooms/rm_map_1/rm_map_1.yy",},
   ],
   "isDnd":false,
   "layers":[
