@@ -17,6 +17,7 @@ if(global.halted == 0)
 		if(global.battlersActive[4] == 0) battleTarget = 5;
 	} else {
 		battleTarget = 0;
+		if(global.battlersActive[0] == 0) battleTarget = 1;
 	}
 	
 	battlerName = global.battlersNames[currentBattler];
@@ -25,7 +26,7 @@ if(global.halted == 0)
 	//if one of the enemies attacking - makes choice for them
 	if(currentBattler >= 3)
 	{
-		global.moveID = 1;
+		global.moveID = choose(1, 1, 2, 1, 1);
 	}
 
 	//if haven't already done move...
@@ -62,30 +63,47 @@ if(global.halted == 0)
 				//marks user as defending til their next turn
 				global.currentMessage = battlerName + " defended!";
 				battlersDefending[currentBattler] = 1;
+				if(currentBattler < 3)
+				{
+					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] + 5;
+					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = global.partyMaxMP[currentBattler];
+				}
 			} else if(global.moveID == 3)
 			{
 				//message for scanning enemy
 				global.currentMessage = "You scanned the rat: It's a placeholder!";
 			} else if(global.moveID == 4)
 			{
-				//heals half of player's HP
-				global.currentMessage = battlerName + " healed!";
-				global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + (global.battlersMaxHP[currentBattler]/2);
-				//makes sure to not heal above HP cap
-				if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
+				if(global.partyCurrentMP[currentBattler] < 10)
 				{
-					global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+					global.currentMessage = "Don't have enough MP!";
+					currentBattler--;
+					if(currentBattler == -1) currentBattler = 6;
+				} else {
+				//heals half of player's HP
+					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 10;
+					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = 0;
+					
+					global.currentMessage = battlerName + " healed!";
+					global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + (global.battlersMaxHP[currentBattler]/2);
+					//makes sure to not heal above HP cap
+					if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
+					{
+						global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+					}
 				}
 			} else if(global.moveID == 5)
 			{
 				//does magic attack, checks if has enough MP
-				if(global.partyCurrentMP[currentBattler] < 20)
+				if(global.partyCurrentMP[currentBattler] < 25)
 				{
 					//currently just skips your turn if you don't have enough, i will fix this
 					global.currentMessage = "Don't have enough MP!";
+					currentBattler--;
+					if(currentBattler == -1) currentBattler = 6;
 				} else {
 					//same sort of damage calculations as for basic attack - will generalize this later
-					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 20;
+					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 25;
 					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = 0;
 					
 					damageDealt = floor(25 * (battlersAttack[currentBattler]/battlersDefense[battleTarget]));
@@ -121,7 +139,7 @@ if(global.halted == 0)
 			global.messageToShow = 1;
 			//goes to next battler
 			currentBattler++;
-			if(currentBattler == 6) currentBattler = 0;
+			if(currentBattler >= 6) currentBattler = 0;
 			while(global.battlersActive[currentBattler] == 0)
 			{
 				currentBattler++;
