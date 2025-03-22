@@ -20,6 +20,3 @@ global.worldDate = { // Global date, used to measure time. This is the default t
 
 global.isPaused		= false;
 global.isDialogue	= false;
-
-global.flags		= array_create(100, 0); // Array of variables for "Flags", for determining if certain events should be fired or not
-global.holidays		= array_create(100, 0); // Array of variables for holidays and if they've happened yet on that frame. Is reset on a new year
