@@ -53,6 +53,7 @@
     {"name":"GMLTest_Matchers","order":18,"path":"scripts/GMLTest_Matchers/GMLTest_Matchers.yy",},
     {"name":"GMLTest_Private","order":19,"path":"scripts/GMLTest_Private/GMLTest_Private.yy",},
     {"name":"GMLTest_Tests","order":20,"path":"scripts/GMLTest_Tests/GMLTest_Tests.yy",},
+    {"name":"holiday_function","order":3,"path":"scripts/holiday_function/holiday_function.yy",},
     {"name":"ParameterExample","order":1,"path":"scripts/ParameterExample/ParameterExample.yy",},
     {"name":"StandardExample","order":2,"path":"scripts/StandardExample/StandardExample.yy",},
     {"name":"spr_bigmap_inspect_Button","order":6,"path":"sprites/spr_bigmap_inspect_Button/spr_bigmap_inspect_Button.yy",},

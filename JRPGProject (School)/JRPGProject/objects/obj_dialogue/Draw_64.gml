@@ -10,7 +10,12 @@ messageLength = string_length(messageContents[messageProgress]);
 
 // If the entire length of the message hasn't been printed yet
 if !(typerProgress >= (messageLength)) {
-	typerDelay++; // Progress the text of the message
+	
+	if ((string_char_at(messageContents[messageProgress], typerProgress) == ".") || (string_char_at(messageContents[messageProgress], typerProgress) == ",")) {
+		typerDelay+=0.25; // Progress the text of the message less for a space
+	} else {
+		typerDelay++; // Progress the normal amount for all other characters
+	}
 	if (typerDelay == 2) {
 		typerDelay = 0;
 		typerProgress++;
@@ -46,7 +51,7 @@ if (messageEmote[messageProgress] == undefined) {
 // Draw the text
 var oldFt = draw_get_font();
 draw_set_font(ft_basic);
-draw_text_ext(30+emoteWidth, 214, string_copy(messageContents[messageProgress], 0, typerProgress), 20, 360-emoteWidth);
+draw_text_ext(30+emoteWidth, 214, string_copy(messageContents[messageProgress], 1, typerProgress), 20, 360-emoteWidth);
 if (messageSpeaker[messageProgress] != undefined) {
 	draw_text_ext(35, 188, messageSpeaker[messageProgress], 20, 360);
 }
