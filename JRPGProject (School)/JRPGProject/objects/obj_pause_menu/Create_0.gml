@@ -48,5 +48,5 @@ global.pausetest_arg4 = 0;
 global.pausetest_arg7 = 0; 
 global.pausetest_arg8 = 0;
 
-
+// The whitebox tests
 pause_whiteBox_Tests();
