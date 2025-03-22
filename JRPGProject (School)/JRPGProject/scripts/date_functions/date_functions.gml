@@ -40,6 +40,10 @@ function advance_date(oldDay, oldMonth, oldYear) {
 		if (oldMonth == 12) { // If december, go to next oldYear
 			oldYear++;
 			oldMonth = 1;
+			for (var i = array_length(global.holidays)-1; i>=0; --i) {
+				global.holidays[i] = 0;
+			}
+			
 		} else { // If not december, advance to next oldMonth as normal
 			oldMonth += 1;
 		}
@@ -94,6 +98,17 @@ function advance_date(oldDay, oldMonth, oldYear) {
 		year	: oldYear,
 		weekday : newWeekday
 	};
+	if (holiday_check(oldDay, oldMonth, "Exists")) {
+		if (global.holidays[holiday_check(oldDay, oldMonth, "Index")] == 0) {
+			var daiBox = instance_create_layer(0, 0, "Instances", obj_dialogue);
+			daiBox.messageContents = holiday_check(oldDay, oldMonth, "Contents");
+			daiBox.messageSpeaker = holiday_check(oldDay, oldMonth, "Speakers");
+			daiBox.messageEmote = holiday_check(oldDay, oldMonth, "Emotes");
+		
+			global.holidays[holiday_check(oldDay, oldMonth, "Index")] = 1;
+		}
+	}
+	
 	return newDate;
 };
 
