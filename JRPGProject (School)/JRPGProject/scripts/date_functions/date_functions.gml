@@ -43,7 +43,7 @@ function advance_date(oldDay, oldMonth, oldYear) {
 			for (var i = array_length(global.holidays)-1; i>=0; --i) {
 				global.holidays[i] = 0;
 			}
-			
+
 		} else { // If not december, advance to next oldMonth as normal
 			oldMonth += 1;
 		}
@@ -104,11 +104,11 @@ function advance_date(oldDay, oldMonth, oldYear) {
 			daiBox.messageContents = holiday_check(oldDay, oldMonth, "Contents");
 			daiBox.messageSpeaker = holiday_check(oldDay, oldMonth, "Speakers");
 			daiBox.messageEmote = holiday_check(oldDay, oldMonth, "Emotes");
-		
+
 			global.holidays[holiday_check(oldDay, oldMonth, "Index")] = 1;
 		}
 	}
-	
+
 	return newDate;
 };
 
@@ -207,7 +207,7 @@ function ordinal_suffix(num) {
 			ordinal = string(num) + "th";
 			break;
 	}
-	
+
 	switch (num % 100) {
 		case 11:
 		case 12:
@@ -215,6 +215,6 @@ function ordinal_suffix(num) {
 			ordinal = string(num) + "th";
 			break;
 	}
-	
+
 	return ordinal;
 };
