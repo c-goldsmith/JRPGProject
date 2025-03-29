@@ -37,3 +37,16 @@ pauseMenuText[3, 4] = "Back";
 pauseMenuLevel = 0;
 pauseMenuPos = 0;
 pauseMenuLength = 0;
+
+// Testing variables for the unit tests
+checki = 0;
+global.pausetest_arg1 = 0; 
+global.pausetest_arg2 = 0;
+global.pausetest_arg3 = 0; 
+global.pausetest_arg4 = 0;
+
+global.pausetest_arg7 = 0; 
+global.pausetest_arg8 = 0;
+
+// The whitebox tests
+pause_whiteBox_Tests();
