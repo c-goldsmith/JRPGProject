@@ -12,6 +12,7 @@ if(global.halted == 0)
 	
 	if(currentBattler < 3)
 	{
+		global.activeParty = currentBattler;
 		battleTarget = 3;
 		if(global.battlersActive[3] == 0) battleTarget = 4;
 		if(global.battlersActive[4] == 0) battleTarget = 5;
@@ -26,7 +27,7 @@ if(global.halted == 0)
 	//if one of the enemies attacking - makes choice for them
 	if(currentBattler >= 3)
 	{
-		global.moveID = choose(1, 1, 2, 1, 1);
+		global.moveID = choose(5, 5, 1, 5, 5);
 	}
 
 	//if haven't already done move...
@@ -36,29 +37,7 @@ if(global.halted == 0)
 	
 		if(global.moveID != 0)
 		{
-			//checks what move was done (will change to switch)
 			if(global.moveID == 1)
-			{
-				//if basic attack, does damage calc
-				damageDealt = floor(10 * (battlersAttack[currentBattler]/battlersDefense[battleTarget]));
-				//checks if attacking defending player - halves damage
-				if(battlersDefending[battleTarget] == 1) damageDealt = floor(damageDealt / 2);
-				
-				//does the damage
-				global.battlersCurrentHP[battleTarget] = global.battlersCurrentHP[battleTarget] - damageDealt;
-				if(global.battlersCurrentHP[battleTarget] <= 0) global.battlersCurrentHP[battleTarget] = 0;
-			
-				//displays message
-				global.currentMessage = battlerName + " attacked " + defenderName + "!";
-				
-				//if defeated, show message
-				if(global.battlersCurrentHP[battleTarget] <= 0) 
-				{
-					global.currentMessage = defenderName + " was defeated!";
-					global.battlersActive[battleTarget] = 0;
-				}
-			}
-			else if(global.moveID == 2)
 			{
 				//marks user as defending til their next turn
 				global.currentMessage = battlerName + " defended!";
@@ -68,19 +47,19 @@ if(global.halted == 0)
 					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] + 5;
 					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = global.partyMaxMP[currentBattler];
 				}
-			} else if(global.moveID == 3)
+			} else if(global.moveID == 2)
 			{
 				//message for scanning enemy
 				global.currentMessage = "You scanned the rat: It's a placeholder!";
-			} else if(global.moveID == 4)
+			} else if(global.moveID == 3)
 			{
+				//heals half of player's HP
 				if(global.partyCurrentMP[currentBattler] < 10)
 				{
 					global.currentMessage = "Don't have enough MP!";
 					currentBattler--;
 					if(currentBattler == -1) currentBattler = 6;
 				} else {
-				//heals half of player's HP
 					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 10;
 					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = 0;
 					
@@ -92,10 +71,18 @@ if(global.halted == 0)
 						global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
 					}
 				}
-			} else if(global.moveID == 5)
+			} else if(global.moveID == 4) {
+				global.currentMessage = "Group Heal has not been implemented yet.";
+				currentBattler--;
+				if(currentBattler == -1) currentBattler = 6;
+			} else if(global.moveID >= 5)
 			{
+				show_debug_message("am i even getting here???");
+				checkMP = MPcheck(currentBattler);
+				
+				show_debug_message("checkMP is {0}", checkMP);
 				//does magic attack, checks if has enough MP
-				if(global.partyCurrentMP[currentBattler] < 25)
+				if(!checkMP)
 				{
 					//currently just skips your turn if you don't have enough, i will fix this
 					global.currentMessage = "Don't have enough MP!";
@@ -103,21 +90,23 @@ if(global.halted == 0)
 					if(currentBattler == -1) currentBattler = 6;
 				} else {
 					//same sort of damage calculations as for basic attack - will generalize this later
-					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 25;
-					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = 0;
 					
-					damageDealt = floor(25 * (battlersAttack[currentBattler]/battlersDefense[battleTarget]));
-					if(battlersDefending[battleTarget] == 1) damageDealt = floor(damageDealt / 2);
-				
-					global.battlersCurrentHP[battleTarget] = global.battlersCurrentHP[battleTarget] - damageDealt;
-					if(global.battlersCurrentHP[battleTarget] <= 0) global.battlersCurrentHP[battleTarget] = 0;
+					userAttack = battlersAttack[currentBattler];
+					targetDefense = battlersDefense[battleTarget];
+					targetDefending = battlersDefending[battleTarget];
 					
-					global.currentMessage = battlerName + " used Fireball on " + defenderName + "!";
+					doDamage(currentBattler, battleTarget, userAttack, targetDefense, targetDefending);
+					
+					if(global.moveID == 5)
+					{
+						global.currentMessage = battlerName + " attacked " + defenderName + "!";
+					} else {
+						global.currentMessage = battlerName + " used " + global.attackName + " on " + defenderName + "!";
+					}
 					
 					if(global.battlersCurrentHP[battleTarget] <= 0) 
 					{
-						global.currentMessage = defenderName + " was defeated!";
-						global.battlersActive[battleTarget] = 0;
+						alarm[0] = 0.55 * game_get_speed(gamespeed_fps);
 					}
 				}
 			

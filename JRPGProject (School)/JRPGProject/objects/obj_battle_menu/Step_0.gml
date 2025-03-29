@@ -14,12 +14,11 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 		case 0: // Attack or Scan
 			if(onSpellMenu == 0)
 			{
-				global.moveID = 1;
+				global.moveID = 5;
 			} else {
-				global.moveID = 3;
+				global.moveID = 2;
 				onSpellMenu = 0;
-				textToDisplay = battleText;
-				
+				textToDisplay = battleText;	
 			}
 			visible = 0;
 			battleMenuSelect = 0;
@@ -31,9 +30,11 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 			{
 				battleMenuSelect = 0;
 				onSpellMenu = 1;
-				textToDisplay = spellText;
+				if(global.activeParty = 0) textToDisplay = spellText1;
+				if(global.activeParty = 1) textToDisplay = spellText2;
 			} else {
-				global.moveID = 4;
+				if(global.activeParty = 0) global.moveID = 3;
+				if(global.activeParty = 1) global.moveID = 4;
 				visible = 0;
 				onSpellMenu = 0;
 				textToDisplay = battleText;
@@ -46,9 +47,10 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 			if(onSpellMenu == 0)
 			{
 				visible = 0;
-				global.moveID = 2;
+				global.moveID = 1;
 			} else {
-				global.moveID = 5;
+				if(global.activeParty = 0) global.moveID = 6;
+				if(global.activeParty = 1) global.moveID = 7;
 				visible = 0;
 				onSpellMenu = 0;
 				textToDisplay = battleText;
