@@ -13,10 +13,18 @@ battleText = [
 	"Exit"
 ];
 
-spellText = [
+spellText1 = [
 	"Scan",
 	"Heal",
 	"Fireball",
+	"Back"
+];
+
+spellText2 =
+[
+	"Scan",
+	"Group Heal",
+	"Thunderbolt",
 	"Back"
 ];
 
