@@ -14,6 +14,8 @@ draw_text(402, 22, string(global.worldDate.year));
 draw_set_halign(fa_left);
 draw_text(317, 30, weekday_name(global.worldDate.weekday));
 
+
+	// Draw location name and inspection sprite overlay when walking over a map spot
 var mapSpot = instance_place(x,y,par_mapspot);
 
 if (!(mapSpot == noone) && !(global.isPaused) && !(global.isDialogue)) {
@@ -24,3 +26,4 @@ if (!(mapSpot == noone) && !(global.isPaused) && !(global.isDialogue)) {
 	draw_set_halign(fa_left);
 	draw_sprite_ext(spr_bigmap_inspect_Button, 0, 210, 115, 1, 1, 0, c_white, 1);
 }
+

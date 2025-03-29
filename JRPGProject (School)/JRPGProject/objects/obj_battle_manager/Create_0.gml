@@ -36,15 +36,21 @@ battlersDefending = [0, 0, 0, 0, 0, 0];
 currentBattler = 0;
 battleTarget = 2;
 
-
+global.attackName = "placeholder";
 battlerName = "placeholder";
 defenderName = "placeholder";
 
+global.activeParty = 0;
 
 damageDealt = 0;
 failedMove = 0;
 
 global.selectedEnemy = 0;
 
+//temp variables for battle formula
+targetDefending = 0;
+targetDefense = 0;
+userAttack = 0;
+checkMP = false;
 
 

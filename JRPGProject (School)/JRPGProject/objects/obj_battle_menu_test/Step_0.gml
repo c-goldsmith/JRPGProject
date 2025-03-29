@@ -14,14 +14,13 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 		case 0: // Attack or Scan
 			if(onSpellMenu == 0)
 			{
-				global.moveID = 5;
+				global.moveID = 1;
 			} else {
-				global.moveID = 2;
+				global.moveID = 3;
 				onSpellMenu = 0;
-				textToDisplay = battleText;	
+				textToDisplay = battleText;
 			}
 			visible = 0;
-			battleMenuSelect = 0;
 			
 		break;
 		
@@ -30,16 +29,13 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 			{
 				battleMenuSelect = 0;
 				onSpellMenu = 1;
-				if(global.activeParty = 0) textToDisplay = spellText1;
-				if(global.activeParty = 1) textToDisplay = spellText2;
+				textToDisplay = spellText;
 			} else {
-				if(global.activeParty = 0) global.moveID = 3;
-				if(global.activeParty = 1) global.moveID = 4;
+				global.moveID = 4;
 				visible = 0;
 				onSpellMenu = 0;
 				textToDisplay = battleText;
 			}
-			battleMenuSelect = 0;
 		
 		break;
 		
@@ -47,15 +43,13 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 			if(onSpellMenu == 0)
 			{
 				visible = 0;
-				global.moveID = 1;
+				global.moveID = 2;
 			} else {
-				if(global.activeParty = 0) global.moveID = 6;
-				if(global.activeParty = 1) global.moveID = 7;
+				global.moveID = 5;
 				visible = 0;
 				onSpellMenu = 0;
 				textToDisplay = battleText;
-			}
-			battleMenuSelect = 0;
+			}	
 		break;
 		
 		case 3: // Exit to main menu - this will be replaced with run 
@@ -67,7 +61,6 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 				onSpellMenu = 0;
 				textToDisplay = battleText;
 			}
-			battleMenuSelect = 0;
 		break;
 	}
 }
