@@ -51,6 +51,7 @@
     {"name":"test_object","order":1,"path":"objects/test_object/test_object.yy",},
     {"name":"damage_calc_function","order":3,"path":"scripts/damage_calc_function/damage_calc_function.yy",},
     {"name":"compare_nums_functions","order":3,"path":"scripts/compare_nums_functions/compare_nums_functions.yy",},
+    {"name":"damage_calc_function","order":3,"path":"scripts/damage_calc_function/damage_calc_function.yy",},
     {"name":"GMLTest_Helpers","order":16,"path":"scripts/GMLTest_Helpers/GMLTest_Helpers.yy",},
     {"name":"GMLTest_Manager","order":17,"path":"scripts/GMLTest_Manager/GMLTest_Manager.yy",},
     {"name":"GMLTest_Matchers","order":18,"path":"scripts/GMLTest_Matchers/GMLTest_Matchers.yy",},
