@@ -2,14 +2,14 @@
 // You can write your code in this editor
 
 //checks if it's player or enemy turn
+if(battleEnd)
+{
+	room_goto(rm_start_test);
+}
+
+
 if(global.halted == 0)
 {
-	if(battleEnd)
-	{
-		room_goto(rm_start_test);
-	}
-	//checks who the battler is
-	
 	if(currentBattler < 3)
 	{
 		global.activeParty = currentBattler;
@@ -101,7 +101,7 @@ if(global.halted == 0)
 					}
 					
 				}
-			} else if(global.moveID >= 5)
+			} else if((global.moveID >= 5) && (global.moveID < 20))
 			{
 				//show_debug_message("am i even getting here???");
 				checkMP = MPcheck(currentBattler);
@@ -126,7 +126,11 @@ if(global.halted == 0)
 					if(global.moveID == 5)
 					{
 						global.currentMessage = battlerName + " attacked " + defenderName + "!";
-					} else {
+					} else if (global.moveID == 8)
+					{
+						global.currentMessage = battlerName + " used " + global.attackName + "!";
+					} else
+					{
 						global.currentMessage = battlerName + " used " + global.attackName + " on " + defenderName + "!";
 					}
 					
