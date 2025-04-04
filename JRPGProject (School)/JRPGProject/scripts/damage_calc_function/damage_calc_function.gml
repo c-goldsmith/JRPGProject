@@ -17,6 +17,8 @@ function doDamage(user, target, userAttack, oppDefense, isDefending){
 	
 	global.battlersCurrentHP[target] = global.battlersCurrentHP[target] - damageDealt;
 	if(global.battlersCurrentHP[target] <= 0) global.battlersCurrentHP[target] = 0;
+	
+	if(global.battlersCurrentHP[target] == 0) global.battlersActive[target] = 0;
 }
 
 function getMoveData()
