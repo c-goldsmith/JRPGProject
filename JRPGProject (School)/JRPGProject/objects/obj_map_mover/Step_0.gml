@@ -56,6 +56,17 @@ if (x != oldX) || (y != oldY) {
 	if (charSteps >= 100) {
 		charSteps = 0;
 		global.worldDate = advance_date(global.worldDate.day, global.worldDate.month, global.worldDate.year);
+		
+		if (holiday_check(global.worldDate.day, global.worldDate.month, "Exists")) {
+			if (global.holidays[holiday_check(global.worldDate.day, global.worldDate.month, "Index")] == 0) {
+				var daiBox = instance_create_layer(0, 0, "Instances", obj_dialogue);
+				daiBox.messageContents = holiday_check(global.worldDate.day, global.worldDate.month, "Contents");
+				daiBox.messageSpeaker = holiday_check(global.worldDate.day, global.worldDate.month, "Speakers");
+				daiBox.messageEmote = holiday_check(global.worldDate.day, global.worldDate.month, "Emotes");
+
+				global.holidays[holiday_check(global.worldDate.day, global.worldDate.month, "Index")] = 1;
+			}
+		}
 	}
 	
 	

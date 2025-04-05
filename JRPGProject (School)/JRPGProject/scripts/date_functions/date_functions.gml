@@ -98,19 +98,11 @@ function advance_date(oldDay, oldMonth, oldYear) {
 		year	: oldYear,
 		weekday : newWeekday
 	};
-	if (holiday_check(oldDay, oldMonth, "Exists")) {
-		if (global.holidays[holiday_check(oldDay, oldMonth, "Index")] == 0) {
-			var daiBox = instance_create_layer(0, 0, "Instances", obj_dialogue);
-			daiBox.messageContents = holiday_check(oldDay, oldMonth, "Contents");
-			daiBox.messageSpeaker = holiday_check(oldDay, oldMonth, "Speakers");
-			daiBox.messageEmote = holiday_check(oldDay, oldMonth, "Emotes");
-
-			global.holidays[holiday_check(oldDay, oldMonth, "Index")] = 1;
-		}
-	}
 
 	return newDate;
 };
+
+
 
 // Get name of month
 function month_name(num) {
@@ -217,4 +209,93 @@ function ordinal_suffix(num) {
 	}
 
 	return ordinal;
+};
+
+function get_weekday_of_date(day, month, year) {
+	var febLength = 0;
+	
+	if ((year % 4) == 0)			{ febLength = 29; 
+	} else if ((year % 100) == 0)	{ febLength = 28; 
+	} else if ((year % 4) == 0)		{ febLength = 29;
+	} // Set length of february based on if a leap year or not
+	
+	var offset = -1;
+	switch (month) { // Determine oldMonth offset for weekday calculation
+		case 1:
+			offset = 0;
+			break;
+		case 2:
+			offset = 3;
+			break;
+		case 3:
+			if (febLength == 28) { offset = 3; } else { offset = 4; }
+			break;
+		case 4:
+			if (febLength == 28) { offset = 6; } else { offset = 0; }
+			break;
+		case 5:
+			if (febLength == 28) { offset = 1; } else { offset = 2; }
+			break;
+		case 6:
+			if (febLength == 28) { offset = 4; } else { offset = 5; }
+			break;
+		case 7:
+			if (febLength == 28) { offset = 6; } else { offset = 0; }
+			break;
+		case 8:
+			if (febLength == 28) { offset = 2; } else { offset = 3; }
+			break;
+		case 9:
+			if (febLength == 28) { offset = 5; } else { offset = 6; }
+			break;
+		case 10:
+			if (febLength == 28) { offset = 0; } else { offset = 1; }
+			break;
+		case 11:
+			if (febLength == 28) { offset = 3; } else { offset = 4; }
+			break;
+		case 12:
+			if (febLength == 28) { offset = 5; } else { offset = 6; }
+			break;
+			
+	}
+	
+	var weekday = (day + offset + 5*((year-1) % 4) + 4*((year-1) % 100) + 6*((year-1) % 400)) % 7;
+	return weekday;
+};
+
+function get_month_length(month, year) {
+	var febLength = 0;
+	if ((year % 4) == 0)			{ febLength = 29; 
+	} else if ((year % 100) == 0)	{ febLength = 28; 
+	} else if ((year % 4) == 0)		{ febLength = 29;
+	} // Set length of february based on if a leap year or not
+	
+	var length = 0;
+	switch (month) {
+		case 1: // January
+		case 3: // March
+		case 5: // May
+		case 7: // July
+		case 8: // August
+		case 10:// October
+		case 12:// December
+			// Months with 31 days 
+			length = 31;
+			break;
+		
+		case 4: // April
+		case 6: // June
+		case 9: // September
+		case 11:// November
+			// Months with 30 days
+			length = 30;
+			break;
+		
+		case 2: // just February lol
+			length = febLength;
+			break;
+	}
+	
+	return length;
 };
