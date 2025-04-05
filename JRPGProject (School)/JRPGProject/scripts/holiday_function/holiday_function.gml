@@ -19,7 +19,7 @@ function holiday_check(day, month, request){
 								];
 						
 						case "Speakers":
-							return [ "Holiday Notification", "Holiday Notification", "Holiday Notification", "Rosette" ];
+							return [ "Holiday Notif.", "Holiday Notif.", "Holiday Notif.", "Rosette" ];
 						
 						case "Emotes":
 							return [ undefined, undefined, undefined, tspr_Rosette_Happy_2 ];
