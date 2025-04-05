@@ -2,14 +2,14 @@
 // You can write your code in this editor
 
 //checks if it's player or enemy turn
+if(battleEnd)
+{
+	room_goto(rm_start_test);
+}
+
+
 if(global.halted == 0)
 {
-	if(battleEnd)
-	{
-		room_goto(rm_start_test);
-	}
-	//checks who the battler is
-	
 	if(currentBattler < 3)
 	{
 		global.activeParty = currentBattler;
@@ -17,8 +17,12 @@ if(global.halted == 0)
 		if(global.battlersActive[3] == 0) battleTarget = 4;
 		if(global.battlersActive[4] == 0) battleTarget = 5;
 	} else {
-		battleTarget = 0;
-		if(global.battlersActive[0] == 0) battleTarget = 1;
+		battleTarget = choose(0, 1, 2);
+		while(global.battlersActive[battleTarget] == 0)
+		{
+			battleTarget += 1;
+			if(battleTarget == 3) battleTarget = 0;
+		}
 	}
 	
 	battlerName = global.battlersNames[currentBattler];
@@ -65,6 +69,8 @@ if(global.halted == 0)
 					
 					global.currentMessage = battlerName + " healed!";
 					global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + (global.battlersMaxHP[currentBattler]/2);
+					global.battlersCurrentHP[currentBattler] = floor(global.battlersCurrentHP[currentBattler]);
+					
 					//makes sure to not heal above HP cap
 					if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
 					{
@@ -72,15 +78,35 @@ if(global.halted == 0)
 					}
 				}
 			} else if(global.moveID == 4) {
-				global.currentMessage = "Group Heal has not been implemented yet.";
-				currentBattler--;
-				if(currentBattler == -1) currentBattler = 6;
-			} else if(global.moveID >= 5)
+				if(global.partyCurrentMP[currentBattler] < 30)
+				{
+					global.currentMessage = "Don't have enough MP!";
+					currentBattler--;
+					if(currentBattler == -1) currentBattler = 6;
+				} else {
+					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 20;
+					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = 0;
+					
+					global.currentMessage = battlerName + " healed their allies!";
+					
+					for (var i = 0; i < 3; i++)
+					{
+						global.battlersCurrentHP[i] = global.battlersCurrentHP[i] + (global.battlersMaxHP[i]/4);
+						global.battlersCurrentHP[i] = floor(global.battlersCurrentHP[i]);
+						//makes sure to not heal above HP cap
+						if(global.battlersCurrentHP[i] >= global.battlersMaxHP[i]) 
+						{
+							global.battlersCurrentHP[i] = global.battlersMaxHP[i];
+						}
+					}
+					
+				}
+			} else if((global.moveID >= 5) && (global.moveID < 20))
 			{
-				show_debug_message("am i even getting here???");
+				//show_debug_message("am i even getting here???");
 				checkMP = MPcheck(currentBattler);
 				
-				show_debug_message("checkMP is {0}", checkMP);
+				//show_debug_message("checkMP is {0}", checkMP);
 				//does magic attack, checks if has enough MP
 				if(!checkMP)
 				{
@@ -100,7 +126,11 @@ if(global.halted == 0)
 					if(global.moveID == 5)
 					{
 						global.currentMessage = battlerName + " attacked " + defenderName + "!";
-					} else {
+					} else if (global.moveID == 8)
+					{
+						global.currentMessage = battlerName + " used " + global.attackName + "!";
+					} else
+					{
 						global.currentMessage = battlerName + " used " + global.attackName + " on " + defenderName + "!";
 					}
 					

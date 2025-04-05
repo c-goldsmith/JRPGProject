@@ -53,4 +53,3 @@ targetDefense = 0;
 userAttack = 0;
 checkMP = false;
 
-

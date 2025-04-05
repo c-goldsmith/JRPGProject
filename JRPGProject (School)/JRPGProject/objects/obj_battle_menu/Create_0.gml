@@ -22,7 +22,7 @@ spellText1 = [
 
 spellText2 =
 [
-	"Scan",
+	"Cold Wind",
 	"Group Heal",
 	"Thunderbolt",
 	"Back"

@@ -16,7 +16,8 @@ if (keyboard_check_pressed(vk_space) || keyboard_check_pressed(ord("Z")) && visi
 			{
 				global.moveID = 5;
 			} else {
-				global.moveID = 2;
+				if(global.activeParty = 0) global.moveID = 2;
+				if(global.activeParty = 1) global.moveID = 8;
 				onSpellMenu = 0;
 				textToDisplay = battleText;	
 			}
