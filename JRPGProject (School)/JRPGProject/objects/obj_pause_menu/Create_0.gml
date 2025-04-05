@@ -19,11 +19,13 @@ pauseMenuText[1, 3] = "PartyMember4";
 pauseMenuText[1, 4] = "Back";
 
 // Menu level 2 - Inventory
-// (has placeholder text for now)
-pauseMenuText[2, 0] = "Item1";
-pauseMenuText[2, 1] = "Item2";
-pauseMenuText[2, 2] = "Item3";
-pauseMenuText[2, 3] = "Back";
+// Can show the current items on hand
+inv_length = array_length(obj_item_manager.inventory)
+
+for (i = 0; i < inv_length; i += 1) {
+	pauseMenuText[2, i] = obj_item_manager.inventory[i].name
+}
+pauseMenuText[2, i] = "Back";
 
 // Menu level 3 - Bestiary table of contents
 // (has placeholder text for now)
