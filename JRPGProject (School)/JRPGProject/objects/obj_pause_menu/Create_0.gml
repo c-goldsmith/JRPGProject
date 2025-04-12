@@ -29,11 +29,18 @@ pauseMenuText[2, i] = "Back";
 
 // Menu level 3 - Bestiary table of contents
 // (has placeholder text for now)
-pauseMenuText[3, 0] = "Enemy1";
-pauseMenuText[3, 1] = "Enemy2";
-pauseMenuText[3, 2] = "Enemy3";
-pauseMenuText[3, 3] = "Enemy4";
-pauseMenuText[3, 4] = "Back";
+bes_length = array_length(obj_bestiary_manager.bestiary)
+
+for (i = 0; i < bes_length; i += 1) {
+	pauseMenuText[3, i] = obj_bestiary_manager.bestiary[i].name
+}
+pauseMenuText[3, i] = "Back";
+
+//pauseMenuText[3, 0] = "Enemy1";
+//pauseMenuText[3, 1] = "Enemy2";
+//pauseMenuText[3, 2] = "Enemy3";
+//pauseMenuText[3, 3] = "Enemy4";
+//pauseMenuText[3, 4] = "Back";
 
 // Level, position, length of the Pause Menu
 pauseMenuLevel = 0;
