@@ -30,11 +30,15 @@ global.battlersMaxHP = [100, 100, 100, 75, 75, 75, 75];
 global.partyCurrentMP = [50, 75, 0];
 global.partyMaxMP = [50, 75, 0];
 global.battlersActive = [1, 1, 0, 1, 1, 1];
-battlersAttack = [50, 50, 50, 25, 25, 25];
-battlersDefense = [75, 75, 75, 25, 25, 25];
+battlersAttack = [50, 50, 50, 40, 40, 40];
+battlersCurrAttack = battlersAttack;
+battlersDefense = [65, 65, 65, 30, 30, 30];
+battlersCurrDefense = battlersDefense;
 battlersDefending = [0, 0, 0, 0, 0, 0];
 currentBattler = 0;
 battleTarget = 2;
+
+global.currentPartyMem = 0;
 
 global.attackName = "placeholder";
 battlerName = "placeholder";
@@ -50,6 +54,10 @@ global.selectedEnemy = 0;
 //temp variables for battle formula
 targetDefending = 0;
 targetDefense = 0;
+
 userAttack = 0;
 checkMP = false;
 
+global.needToChoose = 0;
+global.enemyOrAlly = 0;
+global.chosenTarget = 0;
