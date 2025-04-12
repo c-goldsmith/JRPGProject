@@ -8,3 +8,7 @@ sprWalk = spr_bigmap_mover_south_walk;
 
 charSteps = 0;
 travelSpd = 1;
+
+	// Current month selected on a calendar
+curMonth = global.worldDate.month;
+curYear	 = global.worldDate.year;

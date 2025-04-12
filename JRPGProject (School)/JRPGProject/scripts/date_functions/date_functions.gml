@@ -269,7 +269,7 @@ function get_month_length(month, year) {
 	if ((year % 4) == 0)			{ febLength = 29; 
 	} else if ((year % 100) == 0)	{ febLength = 28; 
 	} else if ((year % 4) == 0)		{ febLength = 29;
-	} // Set length of february based on if a leap year or not
+	} else { febLength = 28; }// Set length of february based on if a leap year or not
 	
 	var length = 0;
 	switch (month) {
