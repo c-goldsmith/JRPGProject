@@ -52,6 +52,7 @@
   "resources":[
     {"id":{"name":"ft_basic","path":"fonts/ft_basic/ft_basic.yy",},},
     {"id":{"name":"ft_gui","path":"fonts/ft_gui/ft_gui.yy",},},
+    {"id":{"name":"battle_target_chooser","path":"objects/battle_target_chooser/battle_target_chooser.yy",},},
     {"id":{"name":"obj_battle_dialogue","path":"objects/obj_battle_dialogue/obj_battle_dialogue.yy",},},
     {"id":{"name":"obj_battle_enemy","path":"objects/obj_battle_enemy/obj_battle_enemy.yy",},},
     {"id":{"name":"obj_battle_manager","path":"objects/obj_battle_manager/obj_battle_manager.yy",},},
@@ -75,6 +76,7 @@
     {"id":{"name":"rm_battle_test","path":"rooms/rm_battle_test/rm_battle_test.yy",},},
     {"id":{"name":"rm_map_1","path":"rooms/rm_map_1/rm_map_1.yy",},},
     {"id":{"name":"rm_start_test","path":"rooms/rm_start_test/rm_start_test.yy",},},
+    {"id":{"name":"choose_battle_function","path":"scripts/choose_battle_function/choose_battle_function.yy",},},
     {"id":{"name":"compare_nums_functions","path":"scripts/compare_nums_functions/compare_nums_functions.yy",},},
     {"id":{"name":"damage_calc_function","path":"scripts/damage_calc_function/damage_calc_function.yy",},},
     {"id":{"name":"date_functions","path":"scripts/date_functions/date_functions.yy",},},
@@ -89,6 +91,7 @@
     {"id":{"name":"Pause_Menu_Tests","path":"scripts/Pause_Menu_Tests/Pause_Menu_Tests.yy",},},
     {"id":{"name":"StandardExample","path":"scripts/StandardExample/StandardExample.yy",},},
     {"id":{"name":"back_start_test","path":"sprites/back_start_test/back_start_test.yy",},},
+    {"id":{"name":"spr_battle_arrow","path":"sprites/spr_battle_arrow/spr_battle_arrow.yy",},},
     {"id":{"name":"spr_battleRat_test","path":"sprites/spr_battleRat_test/spr_battleRat_test.yy",},},
     {"id":{"name":"spr_bigmap_inspect_Button","path":"sprites/spr_bigmap_inspect_Button/spr_bigmap_inspect_Button.yy",},},
     {"id":{"name":"spr_bigmap_mover_east_idle","path":"sprites/spr_bigmap_mover_east_idle/spr_bigmap_mover_east_idle.yy",},},

@@ -7,32 +7,36 @@ if(battleEnd)
 	room_goto(rm_start_test);
 }
 
+if(global.needToChoose == 1)
+{
+	exit;
+}
 
 if(global.halted == 0)
 {
 	if(currentBattler < 3)
 	{
 		global.activeParty = currentBattler;
-		battleTarget = 3;
-		if(global.battlersActive[3] == 0) battleTarget = 4;
-		if(global.battlersActive[4] == 0) battleTarget = 5;
+		if(global.needToChoose == 2) battleTarget = global.chosenBattler;
+		global.currentPartyMem = currentBattler;
+		//battleTarget = 3;
+		//if(global.battlersActive[3] == 0) battleTarget = 4;
+		//if(global.battlersActive[4] == 0) battleTarget = 5;
 	} else {
+		global.currentPartyMem = 3;
 		battleTarget = choose(0, 1, 2);
 		while(global.battlersActive[battleTarget] == 0)
 		{
 			battleTarget += 1;
 			if(battleTarget == 3) battleTarget = 0;
 		}
+		
+		//if one of the enemies attacking - makes choice for them
+		global.moveID = choose(5, 5, 1, 5, 5);
 	}
 	
 	battlerName = global.battlersNames[currentBattler];
 	defenderName = global.battlersNames[battleTarget];
-	
-	//if one of the enemies attacking - makes choice for them
-	if(currentBattler >= 3)
-	{
-		global.moveID = choose(5, 5, 1, 5, 5);
-	}
 
 	//if haven't already done move...
 	if(didMove == 0)
@@ -54,6 +58,12 @@ if(global.halted == 0)
 			} else if(global.moveID == 2)
 			{
 				//message for scanning enemy
+				if(global.needToChoose == 0 && currentBattler < 3) 
+				{
+					battle_chooser(0);
+					exit;
+				}
+				
 				global.currentMessage = "You scanned the rat: It's a placeholder!";
 			} else if(global.moveID == 3)
 			{
@@ -64,17 +74,23 @@ if(global.halted == 0)
 					currentBattler--;
 					if(currentBattler == -1) currentBattler = 6;
 				} else {
+					if(global.needToChoose == 0 && currentBattler < 3) 
+					{
+						battle_chooser(1);
+						exit;
+					}
+					
 					global.partyCurrentMP[currentBattler] = global.partyCurrentMP[currentBattler] - 10;
 					if(global.partyCurrentMP[currentBattler] <= 0) global.partyCurrentMP[currentBattler] = 0;
 					
-					global.currentMessage = battlerName + " healed!";
-					global.battlersCurrentHP[currentBattler] = global.battlersCurrentHP[currentBattler] + (global.battlersMaxHP[currentBattler]/2);
-					global.battlersCurrentHP[currentBattler] = floor(global.battlersCurrentHP[currentBattler]);
+					global.currentMessage = battlerName + " healed " + defenderName;
+					global.battlersCurrentHP[battleTarget] = global.battlersCurrentHP[battleTarget] + (global.battlersMaxHP[battleTarget]/2);
+					global.battlersCurrentHP[battleTarget] = floor(global.battlersCurrentHP[battleTarget]);
 					
 					//makes sure to not heal above HP cap
-					if(global.battlersCurrentHP[currentBattler] >= global.battlersMaxHP[currentBattler]) 
+					if(global.battlersCurrentHP[battleTarget] >= global.battlersMaxHP[battleTarget]) 
 					{
-						global.battlersCurrentHP[currentBattler] = global.battlersMaxHP[currentBattler];
+						global.battlersCurrentHP[battleTarget] = global.battlersMaxHP[battleTarget];
 					}
 				}
 			} else if(global.moveID == 4) {
@@ -116,9 +132,14 @@ if(global.halted == 0)
 					if(currentBattler == -1) currentBattler = 6;
 				} else {
 					//same sort of damage calculations as for basic attack - will generalize this later
+					if(global.needToChoose == 0 && currentBattler < 3) 
+					{
+						battle_chooser(0);
+						exit;
+					}
 					
-					userAttack = battlersAttack[currentBattler];
-					targetDefense = battlersDefense[battleTarget];
+					userAttack = battlersCurrAttack[currentBattler];
+					targetDefense = battlersCurrDefense[battleTarget];
 					targetDefending = battlersDefending[battleTarget];
 					
 					doDamage(currentBattler, battleTarget, userAttack, targetDefense, targetDefending);
@@ -137,9 +158,18 @@ if(global.halted == 0)
 					if(global.battlersCurrentHP[battleTarget] <= 0) 
 					{
 						alarm[0] = 0.55 * game_get_speed(gamespeed_fps);
+						global.battlersActive[battleTarget] = 0;
 					}
 				}
-			
+			} else if(moveID == 20) {
+				var battleDefMin = floor(battlersDefense[battleTarget] * 0.20);
+				battlersCurrDefense[battleTarget] = battlersCurrDefense[battleTarget] - battleDefMin;
+				if(battlersCurrDefense[battleTarget] < (battleDefMin * 2))
+				{
+					battlersCurrDefense[battleTarget] = battleDefMin;
+				}
+				
+				global.currentMessage = battlerName + " lowered " + defenderName + "'s defense!";	
 			}
 			
 			//checks if battle ended (all enemies or all allies are inactive)
@@ -152,7 +182,7 @@ if(global.halted == 0)
 			//end of turn stuff
 			//marks move was done
 			didMove = 1;
-			global.selectedEnemy = 0;
+			//global.selectedEnemy = 0;
 			//tells dialogue what to show stuff
 			global.messagesLeft = 1;
 			global.messageToShow = 1;
@@ -165,6 +195,7 @@ if(global.halted == 0)
 				if(currentBattler == 6) currentBattler = 0;
 			}
 			
+			global.needToChoose = 0;
 			//resets stuff
 			didMove = 0;
 			global.moveID = 0;
@@ -176,4 +207,5 @@ if(global.halted == 0)
 } else {
 	//resets this again - unsure why but this is needed
 	global.moveID = 0;
+	global.needToChoose = 0;
 }
