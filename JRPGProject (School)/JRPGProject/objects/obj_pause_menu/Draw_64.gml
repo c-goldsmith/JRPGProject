@@ -30,6 +30,7 @@ for (var i=0; i<pauseMenuLength; i++) { // Sets color based on current text posi
 	if (pauseMenuPos = i) { // Set color
 		draw_set_color(c_black); // Highlighted color
 		draw_text(55, 30+(i*22), pauseMenuText[pauseMenuLevel,i]+" <");
+		global.itemI = i
 	} else {
 		draw_set_color(c_grey); // Not highlighted color
 		draw_text(55, 30+(i*22), pauseMenuText[pauseMenuLevel,i]);

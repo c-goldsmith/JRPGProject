@@ -14,8 +14,6 @@ pauseMenuPos += down_key_pressed - up_key_pressed;
 if pauseMenuPos >= pauseMenuLength {pauseMenuPos = 0};
 if pauseMenuPos < 0 {pauseMenuPos = pauseMenuLength - 1};
 
-//var descBox = instance_create_layer(20, 20, "Instances", obj_item_desc);
-
 // Statement for selecting a highlighted option for each submenu
 if (space_key_pressed || z_key_pressed) {
 	if (pauseMenuLevel == 0) {
@@ -35,8 +33,17 @@ if (space_key_pressed || z_key_pressed) {
 	}
 	else if (pauseMenuLevel == 3) {
 		// Bestiary
-		if (pauseMenuPos == 4) {pauseMenuLevel = 0; pauseMenuPos = 2;}
+		if (pauseMenuPos == (bes_length)) {pauseMenuLevel = 0; pauseMenuPos = 2;}
 	}
+	
+	// Create instance of item description box for pauseMenuLevel 2
+	// One instance only
+	if (pauseMenuLevel == 2 and (!instance_exists(obj_item_desc))) {
+		instance_create_layer(0, 0, "Instances", obj_item_desc);
+	}
+	// Destroy instance once the level changes from 2
+	else if (pauseMenuLevel != 2) {instance_destroy(obj_item_desc);}
+
 
 	
 	// Get Menu Length of New SubMenu, important for Draw GUI to
