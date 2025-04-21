@@ -34,7 +34,7 @@ global.item_list = {
 
 	key1 : new create_item(
 		"Key",
-		"A key that will open a lock.",
+		"A key that will open a certain lock.",
 		false,
 		20,
 		0

@@ -18,9 +18,9 @@ if pauseMenuPos < 0 {pauseMenuPos = pauseMenuLength - 1};
 if (space_key_pressed || z_key_pressed) {
 	if (pauseMenuLevel == 0) {
 		// First sublevel
-		if (pauseMenuPos == 0) {pauseMenuLevel = 1;}
-		else if (pauseMenuPos == 1) {pauseMenuLevel = 2;}
-		else if (pauseMenuPos == 2) {pauseMenuLevel = 3;}
+		if (pauseMenuPos == 0) {pauseMenuLevel = 1; pauseMenuPos = 0;}
+		else if (pauseMenuPos == 1) {pauseMenuLevel = 2; pauseMenuPos = 0;}
+		else if (pauseMenuPos == 2) {pauseMenuLevel = 3; pauseMenuPos = 0;}
 		else if (pauseMenuPos == 3) {room_goto(rm_start_test);}
 	}
 	else if (pauseMenuLevel == 1) {
@@ -43,6 +43,14 @@ if (space_key_pressed || z_key_pressed) {
 	}
 	// Destroy instance once the level changes from 2
 	else if (pauseMenuLevel != 2) {instance_destroy(obj_item_desc);}
+	
+	if (pauseMenuLevel == 3 and (!instance_exists(obj_bestiary_desc))) {
+		instance_create_layer(0, 0, "Instances", obj_bestiary_desc);
+	}
+	// Destroy instance once the level changes from 2
+	else if (pauseMenuLevel != 3) {instance_destroy(obj_bestiary_desc);}
+	
+	
 
 
 	

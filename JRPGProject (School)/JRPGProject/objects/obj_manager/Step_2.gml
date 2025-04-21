@@ -10,6 +10,8 @@ if (keyboard_check_pressed(vk_escape)) {
 	}
 	else {
 		global.isPaused = false;
-		if instance_exists(obj_pause_menu) { instance_destroy(obj_pause_menu); }
+		if instance_exists(obj_pause_menu) {instance_destroy(obj_pause_menu);}
+		if instance_exists(obj_item_desc) {instance_destroy(obj_item_desc);}
+		if instance_exists(obj_bestiary_desc) {instance_destroy(obj_bestiary_desc);}
 	}
 }

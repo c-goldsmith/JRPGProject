@@ -36,12 +36,6 @@ for (i = 0; i < bes_length; i += 1) {
 }
 pauseMenuText[3, i] = "Back";
 
-//pauseMenuText[3, 0] = "Enemy1";
-//pauseMenuText[3, 1] = "Enemy2";
-//pauseMenuText[3, 2] = "Enemy3";
-//pauseMenuText[3, 3] = "Enemy4";
-//pauseMenuText[3, 4] = "Back";
-
 // Level, position, length of the Pause Menu
 pauseMenuLevel = 0;
 pauseMenuPos = 0;
