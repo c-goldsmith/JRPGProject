@@ -16,8 +16,8 @@ if(global.needToChoose == 1)
 		} else {
 			y = enemyYpos;
 			
-			if(global.battlersActive[3] == 0) chosenTarget = 2;
 			if(global.battlersActive[4] == 0) chosenTarget = 1;
+			if(global.battlersActive[3] == 0) chosenTarget = 2;
 		}
 		
 		x = xValues[chosenTarget];
